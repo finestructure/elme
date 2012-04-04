@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AC2000C152C35F300866FC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000B152C35F300866FC5 /* UIKit.framework */; };
+		5AC2000E152C35F300866FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000D152C35F300866FC5 /* Foundation.framework */; };
+		5AC20010152C35F300866FC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000F152C35F300866FC5 /* CoreGraphics.framework */; };
+		5AC20016152C35F300866FC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AC20014152C35F300866FC5 /* InfoPlist.strings */; };
+		5AC20018152C35F300866FC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20017152C35F300866FC5 /* main.m */; };
+		5AC2001C152C35F300866FC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2001B152C35F300866FC5 /* AppDelegate.m */; };
+		5AC2001F152C35F300866FC5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2001D152C35F300866FC5 /* MainStoryboard.storyboard */; };
+		5AC20022152C35F300866FC5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20021152C35F300866FC5 /* MasterViewController.m */; };
+		5AC20025152C35F300866FC5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20024152C35F300866FC5 /* DetailViewController.m */; };
+		5AC2002D152C35F300866FC5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2002C152C35F300866FC5 /* SenTestingKit.framework */; };
+		5AC2002E152C35F300866FC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000B152C35F300866FC5 /* UIKit.framework */; };
+		5AC2002F152C35F300866FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000D152C35F300866FC5 /* Foundation.framework */; };
+		5AC20037152C35F300866FC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AC20035152C35F300866FC5 /* InfoPlist.strings */; };
+		5AC2003A152C35F300866FC5 /* elmeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20039152C35F300866FC5 /* elmeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AC20030152C35F300866FC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AC2FFFE152C35F300866FC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AC20006152C35F300866FC5;
+			remoteInfo = elme;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5AC20007152C35F300866FC5 /* elme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = elme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AC2000B152C35F300866FC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5AC2000D152C35F300866FC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5AC2000F152C35F300866FC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5AC20013152C35F300866FC5 /* elme-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "elme-Info.plist"; sourceTree = "<group>"; };
+		5AC20015152C35F300866FC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AC20017152C35F300866FC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5AC20019152C35F300866FC5 /* elme-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "elme-Prefix.pch"; sourceTree = "<group>"; };
+		5AC2001A152C35F300866FC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5AC2001B152C35F300866FC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5AC2001E152C35F300866FC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5AC20020152C35F300866FC5 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		5AC20021152C35F300866FC5 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		5AC20023152C35F300866FC5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		5AC20024152C35F300866FC5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		5AC2002B152C35F300866FC5 /* elmeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = elmeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AC2002C152C35F300866FC5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5AC20034152C35F300866FC5 /* elmeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "elmeTests-Info.plist"; sourceTree = "<group>"; };
+		5AC20036152C35F300866FC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AC20038152C35F300866FC5 /* elmeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = elmeTests.h; sourceTree = "<group>"; };
+		5AC20039152C35F300866FC5 /* elmeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = elmeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AC20004152C35F300866FC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AC2000C152C35F300866FC5 /* UIKit.framework in Frameworks */,
+				5AC2000E152C35F300866FC5 /* Foundation.framework in Frameworks */,
+				5AC20010152C35F300866FC5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AC20027152C35F300866FC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AC2002D152C35F300866FC5 /* SenTestingKit.framework in Frameworks */,
+				5AC2002E152C35F300866FC5 /* UIKit.framework in Frameworks */,
+				5AC2002F152C35F300866FC5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AC20008152C35F300866FC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AC20007152C35F300866FC5 /* elme.app */,
+				5AC2002B152C35F300866FC5 /* elmeTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AC2000A152C35F300866FC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AC2000B152C35F300866FC5 /* UIKit.framework */,
+				5AC2000D152C35F300866FC5 /* Foundation.framework */,
+				5AC2000F152C35F300866FC5 /* CoreGraphics.framework */,
+				5AC2002C152C35F300866FC5 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5AC20011152C35F300866FC5 /* elme */ = {
+			isa = PBXGroup;
+			children = (
+				5AC2001A152C35F300866FC5 /* AppDelegate.h */,
+				5AC2001B152C35F300866FC5 /* AppDelegate.m */,
+				5AC2001D152C35F300866FC5 /* MainStoryboard.storyboard */,
+				5AC20020152C35F300866FC5 /* MasterViewController.h */,
+				5AC20021152C35F300866FC5 /* MasterViewController.m */,
+				5AC20023152C35F300866FC5 /* DetailViewController.h */,
+				5AC20024152C35F300866FC5 /* DetailViewController.m */,
+				5AC20012152C35F300866FC5 /* Supporting Files */,
+			);
+			path = elme;
+			sourceTree = "<group>";
+		};
+		5AC20012152C35F300866FC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AC20013152C35F300866FC5 /* elme-Info.plist */,
+				5AC20014152C35F300866FC5 /* InfoPlist.strings */,
+				5AC20017152C35F300866FC5 /* main.m */,
+				5AC20019152C35F300866FC5 /* elme-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AC20032152C35F300866FC5 /* elmeTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AC20038152C35F300866FC5 /* elmeTests.h */,
+				5AC20039152C35F300866FC5 /* elmeTests.m */,
+				5AC20033152C35F300866FC5 /* Supporting Files */,
+			);
+			path = elmeTests;
+			sourceTree = "<group>";
+		};
+		5AC20033152C35F300866FC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AC20034152C35F300866FC5 /* elmeTests-Info.plist */,
+				5AC20035152C35F300866FC5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AC2FFFC152C35F300866FC5 = {
+			isa = PBXGroup;
+			children = (
+				5AC20011152C35F300866FC5 /* elme */,
+				5AC20032152C35F300866FC5 /* elmeTests */,
+				5AC2000A152C35F300866FC5 /* Frameworks */,
+				5AC20008152C35F300866FC5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AC20006152C35F300866FC5 /* elme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AC2003D152C35F300866FC5 /* Build configuration list for PBXNativeTarget "elme" */;
+			buildPhases = (
+				5AC20003152C35F300866FC5 /* Sources */,
+				5AC20004152C35F300866FC5 /* Frameworks */,
+				5AC20005152C35F300866FC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = elme;
+			productName = elme;
+			productReference = 5AC20007152C35F300866FC5 /* elme.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AC2002A152C35F300866FC5 /* elmeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AC20040152C35F300866FC5 /* Build configuration list for PBXNativeTarget "elmeTests" */;
+			buildPhases = (
+				5AC20026152C35F300866FC5 /* Sources */,
+				5AC20027152C35F300866FC5 /* Frameworks */,
+				5AC20028152C35F300866FC5 /* Resources */,
+				5AC20029152C35F300866FC5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AC20031152C35F300866FC5 /* PBXTargetDependency */,
+			);
+			name = elmeTests;
+			productName = elmeTests;
+			productReference = 5AC2002B152C35F300866FC5 /* elmeTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AC2FFFE152C35F300866FC5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "abstracture GmbH & Co. KG";
+			};
+			buildConfigurationList = 5AC20001152C35F300866FC5 /* Build configuration list for PBXProject "elme" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5AC2FFFC152C35F300866FC5;
+			productRefGroup = 5AC20008152C35F300866FC5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AC20006152C35F300866FC5 /* elme */,
+				5AC2002A152C35F300866FC5 /* elmeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AC20005152C35F300866FC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AC20016152C35F300866FC5 /* InfoPlist.strings in Resources */,
+				5AC2001F152C35F300866FC5 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AC20028152C35F300866FC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AC20037152C35F300866FC5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5AC20029152C35F300866FC5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AC20003152C35F300866FC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AC20018152C35F300866FC5 /* main.m in Sources */,
+				5AC2001C152C35F300866FC5 /* AppDelegate.m in Sources */,
+				5AC20022152C35F300866FC5 /* MasterViewController.m in Sources */,
+				5AC20025152C35F300866FC5 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AC20026152C35F300866FC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AC2003A152C35F300866FC5 /* elmeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AC20031152C35F300866FC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AC20006152C35F300866FC5 /* elme */;
+			targetProxy = 5AC20030152C35F300866FC5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5AC20014152C35F300866FC5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AC20015152C35F300866FC5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5AC2001D152C35F300866FC5 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AC2001E152C35F300866FC5 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		5AC20035152C35F300866FC5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AC20036152C35F300866FC5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5AC2003B152C35F300866FC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5AC2003C152C35F300866FC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AC2003E152C35F300866FC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
+				INFOPLIST_FILE = "elme/elme-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5AC2003F152C35F300866FC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
+				INFOPLIST_FILE = "elme/elme-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5AC20041152C35F300866FC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/elme.app/elme";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
+				INFOPLIST_FILE = "elmeTests/elmeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5AC20042152C35F300866FC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/elme.app/elme";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
+				INFOPLIST_FILE = "elmeTests/elmeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AC20001152C35F300866FC5 /* Build configuration list for PBXProject "elme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AC2003B152C35F300866FC5 /* Debug */,
+				5AC2003C152C35F300866FC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AC2003D152C35F300866FC5 /* Build configuration list for PBXNativeTarget "elme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AC2003E152C35F300866FC5 /* Debug */,
+				5AC2003F152C35F300866FC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5AC20040152C35F300866FC5 /* Build configuration list for PBXNativeTarget "elmeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AC20041152C35F300866FC5 /* Debug */,
+				5AC20042152C35F300866FC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5AC2FFFE152C35F300866FC5 /* Project object */;
+}
