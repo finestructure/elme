@@ -23,6 +23,8 @@
 		5AC2003A152C35F300866FC5 /* elmeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20039152C35F300866FC5 /* elmeTests.m */; };
 		5AC2004D152C4C1F00866FC5 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2004B152C4C1F00866FC5 /* icon-57.png */; };
 		5AC2004E152C4C1F00866FC5 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2004C152C4C1F00866FC5 /* icon-114.png */; };
+		5AC2007B152C64E000866FC5 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20078152C64E000866FC5 /* Configuration.m */; };
+		5AC2007C152C64E000866FC5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2007A152C64E000866FC5 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		5AC20039152C35F300866FC5 /* elmeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = elmeTests.m; sourceTree = "<group>"; };
 		5AC2004B152C4C1F00866FC5 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = SOURCE_ROOT; };
 		5AC2004C152C4C1F00866FC5 /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = SOURCE_ROOT; };
+		5AC20077152C64E000866FC5 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		5AC20078152C64E000866FC5 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
+		5AC20079152C64E000866FC5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		5AC2007A152C64E000866FC5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,10 @@
 		5AC20011152C35F300866FC5 /* elme */ = {
 			isa = PBXGroup;
 			children = (
+				5AC20077152C64E000866FC5 /* Configuration.h */,
+				5AC20078152C64E000866FC5 /* Configuration.m */,
+				5AC20079152C64E000866FC5 /* Constants.h */,
+				5AC2007A152C64E000866FC5 /* Constants.m */,
 				5AC2001A152C35F300866FC5 /* AppDelegate.h */,
 				5AC2001B152C35F300866FC5 /* AppDelegate.m */,
 				5AC2001D152C35F300866FC5 /* MainStoryboard.storyboard */,
@@ -275,6 +285,8 @@
 				5AC2001C152C35F300866FC5 /* AppDelegate.m in Sources */,
 				5AC20022152C35F300866FC5 /* MasterViewController.m in Sources */,
 				5AC20025152C35F300866FC5 /* DetailViewController.m in Sources */,
+				5AC2007B152C64E000866FC5 /* Configuration.m in Sources */,
+				5AC2007C152C64E000866FC5 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
