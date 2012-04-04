@@ -25,6 +25,8 @@
 		5AC2004E152C4C1F00866FC5 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2004C152C4C1F00866FC5 /* icon-114.png */; };
 		5AC2007B152C64E000866FC5 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20078152C64E000866FC5 /* Configuration.m */; };
 		5AC2007C152C64E000866FC5 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2007A152C64E000866FC5 /* Globals.m */; };
+		5AC2008C152C672E00866FC5 /* CouchCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2008A152C672E00866FC5 /* CouchCocoa.framework */; };
+		5AC2008D152C672E00866FC5 /* TouchDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2008B152C672E00866FC5 /* TouchDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +65,10 @@
 		5AC2004C152C4C1F00866FC5 /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = SOURCE_ROOT; };
 		5AC20077152C64E000866FC5 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
 		5AC20078152C64E000866FC5 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
-		5AC20079152C64E000866FC5 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Globals.h; sourceTree = "<group>"; };
+		5AC20079152C64E000866FC5 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		5AC2007A152C64E000866FC5 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
+		5AC2008A152C672E00866FC5 /* CouchCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchCocoa.framework; path = vendor/CouchCocoa.framework; sourceTree = "<group>"; };
+		5AC2008B152C672E00866FC5 /* TouchDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TouchDB.framework; path = vendor/TouchDB.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				5AC2000C152C35F300866FC5 /* UIKit.framework in Frameworks */,
 				5AC2000E152C35F300866FC5 /* Foundation.framework in Frameworks */,
 				5AC20010152C35F300866FC5 /* CoreGraphics.framework in Frameworks */,
+				5AC2008C152C672E00866FC5 /* CouchCocoa.framework in Frameworks */,
+				5AC2008D152C672E00866FC5 /* TouchDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +109,8 @@
 		5AC2000A152C35F300866FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AC2008A152C672E00866FC5 /* CouchCocoa.framework */,
+				5AC2008B152C672E00866FC5 /* TouchDB.framework */,
 				5AC2000B152C35F300866FC5 /* UIKit.framework */,
 				5AC2000D152C35F300866FC5 /* Foundation.framework */,
 				5AC2000F152C35F300866FC5 /* CoreGraphics.framework */,
@@ -384,6 +392,10 @@
 		5AC2003E152C35F300866FC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/vendor\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
 				INFOPLIST_FILE = "elme/elme-Info.plist";
@@ -395,6 +407,10 @@
 		5AC2003F152C35F300866FC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/vendor\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
 				INFOPLIST_FILE = "elme/elme-Info.plist";
