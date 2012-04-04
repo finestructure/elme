@@ -11,6 +11,7 @@
 #import "Configuration.h"
 #import "DetailViewController.h"
 #import "Globals.h"
+#import "Project.h"
 
 #import <CouchCocoa/CouchCocoa.h>
 #import <CouchCocoa/CouchTouchDBServer.h>
@@ -161,15 +162,11 @@
 
 - (void)insertNewObject:(id)sender
 {
-  // Create the new document's properties:
-	NSDictionary *inDocument = [NSDictionary dictionaryWithObjectsAndKeys:@"Neues Projekt", @"name",
-                              @"project", @"type",
-                              [RESTBody JSONObjectWithDate: [NSDate date]], @"created_at",
-                              nil];
+  Project *proj = [[Project alloc] initWithNewDocumentInDatabase:self.database];
+  proj.name = @"Neues Projekt";
   
   // Save the document, asynchronously:
-  CouchDocument* doc = [self.database untitledDocument];
-  RESTOperation* op = [doc putProperties:inDocument];
+  RESTOperation* op = [proj save];
   [op onCompletion: ^{
     if (op.error) {
       [self failedWithError:op.error];
@@ -186,7 +183,8 @@
 - (UITableViewCell *)couchTableSource:(CouchUITableSource*)source cellForRowAtIndexPath:(NSIndexPath *)indexPath; {  
   UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectCell"];
   CouchQueryRow *row = [self.dataSource rowAtIndex:indexPath.row];
-  cell.textLabel.text = [row.value valueForKey:@"name"];
+  Project *proj = [Project modelForDocument:row.document];
+  cell.textLabel.text = proj.name;
   
   return cell;
 }
