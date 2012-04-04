@@ -13,11 +13,11 @@ extern NSString * const kConfigurationDefaultsKey;
 
 @class Configuration;
 
-@interface Constants : NSObject
+@interface Globals : NSObject
 
 @property (readonly) NSString *version;
 
-+ (Constants *)sharedInstance;
++ (Globals *)sharedInstance;
 
 - (NSString *)deviceUuid;
 - (NSArray *)configurations;

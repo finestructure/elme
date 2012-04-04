@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 abstracture GmbH & Co. KG. All rights reserved.
 //
 
-#import "Constants.h"
+#import "Globals.h"
 
 #import "Configuration.h"
 
@@ -14,11 +14,11 @@ NSString * const kUuidDefaultsKey = @"UUID";
 NSString * const kConfigurationDefaultsKey = @"Configuration";
 
 
-@implementation Constants
+@implementation Globals
 
 
-+ (Constants *)sharedInstance {
-  static Constants *sharedInstance = nil;
++ (Globals *)sharedInstance {
+  static Globals *sharedInstance = nil;
   
   if (sharedInstance) {
     return sharedInstance;
@@ -26,7 +26,7 @@ NSString * const kConfigurationDefaultsKey = @"Configuration";
   
   @synchronized(self) {
     if (! sharedInstance) {
-      sharedInstance = [[Constants alloc] init];
+      sharedInstance = [[Globals alloc] init];
     }
     
     return sharedInstance;
