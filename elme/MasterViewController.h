@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController
+#import <CouchCocoa/CouchUITableSource.h>
+
+@class CouchDatabase;
+
+@interface MasterViewController : UITableViewController<CouchUITableDelegate>
+
+@property (nonatomic, retain) CouchDatabase *database;
+@property (nonatomic, retain) CouchUITableSource* dataSource;
 
 @end
