@@ -83,11 +83,13 @@
                  mapBlock: ^(NSDictionary* doc, void (^emit)(id key, id value)) {
                    id type = [doc objectForKey: @"type"];
                    if (type && [type isEqualToString:@"project"]) {
-                     id _id = [doc objectForKey:@"_id"];
-                     emit(_id, doc);
+                     id name = [doc objectForKey:@"name"];
+                     if (name) {
+                       emit(name, doc);
+                     }
                    }
                  } 
-                  version: @"1.0"];
+                  version: @"3.0"];
   
   // Create a query sorted by descending date, i.e. newest items first:
   CouchLiveQuery* query = [[[self.database designDocumentWithName: @"default"]
@@ -159,12 +161,22 @@
 
 - (void)insertNewObject:(id)sender
 {
-  if (!_objects) {
-    _objects = [[NSMutableArray alloc] init];
-  }
-  [_objects insertObject:[NSDate date] atIndex:0];
-  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-  [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+  // Create the new document's properties:
+	NSDictionary *inDocument = [NSDictionary dictionaryWithObjectsAndKeys:@"Neues Projekt", @"name",
+                              @"project", @"type",
+                              [RESTBody JSONObjectWithDate: [NSDate date]], @"created_at",
+                              nil];
+  
+  // Save the document, asynchronously:
+  CouchDocument* doc = [self.database untitledDocument];
+  RESTOperation* op = [doc putProperties:inDocument];
+  [op onCompletion: ^{
+    if (op.error) {
+      [self failedWithError:op.error];
+    }
+    [self.dataSource.query start];
+  }];
+  [op start];
 }
 
 
@@ -174,8 +186,7 @@
 - (UITableViewCell *)couchTableSource:(CouchUITableSource*)source cellForRowAtIndexPath:(NSIndexPath *)indexPath; {  
   UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectCell"];
   CouchQueryRow *row = [self.dataSource rowAtIndex:indexPath.row];
-  CouchDocument *doc = [row document];
-  cell.textLabel.text = doc.documentID;
+  cell.textLabel.text = [row.value valueForKey:@"name"];
   
   return cell;
 }
