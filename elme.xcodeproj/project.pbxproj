@@ -30,6 +30,7 @@
 		5AC200B7152C764200866FC5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200B6152C764200866FC5 /* libz.dylib */; };
 		5AC200B9152C764B00866FC5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200B8152C764B00866FC5 /* libsqlite3.dylib */; };
 		5AC200BD152C767A00866FC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200BC152C767A00866FC5 /* SystemConfiguration.framework */; };
+		5AC200C0152C9E0C00866FC5 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC200BF152C9E0C00866FC5 /* Project.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		5AC200B8152C764B00866FC5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		5AC200BA152C766600866FC5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5AC200BC152C767A00866FC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5AC200BE152C9E0C00866FC5 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		5AC200BF152C9E0C00866FC5 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,7 @@
 		5AC20011152C35F300866FC5 /* elme */ = {
 			isa = PBXGroup;
 			children = (
+				5AC200C1152C9E1A00866FC5 /* Model */,
 				5AC20077152C64E000866FC5 /* Configuration.h */,
 				5AC20078152C64E000866FC5 /* Configuration.m */,
 				5AC20079152C64E000866FC5 /* Globals.h */,
@@ -182,6 +186,15 @@
 				5AC20035152C35F300866FC5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AC200C1152C9E1A00866FC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5AC200BE152C9E0C00866FC5 /* Project.h */,
+				5AC200BF152C9E0C00866FC5 /* Project.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		5AC2FFFC152C35F300866FC5 = {
@@ -309,6 +322,7 @@
 				5AC20025152C35F300866FC5 /* DetailViewController.m in Sources */,
 				5AC2007B152C64E000866FC5 /* Configuration.m in Sources */,
 				5AC2007C152C64E000866FC5 /* Globals.m in Sources */,
+				5AC200C0152C9E0C00866FC5 /* Project.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
