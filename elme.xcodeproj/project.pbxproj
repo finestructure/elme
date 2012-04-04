@@ -31,6 +31,7 @@
 		5AC200B9152C764B00866FC5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200B8152C764B00866FC5 /* libsqlite3.dylib */; };
 		5AC200BD152C767A00866FC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200BC152C767A00866FC5 /* SystemConfiguration.framework */; };
 		5AC200C0152C9E0C00866FC5 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC200BF152C9E0C00866FC5 /* Project.m */; };
+		5AC200C4152CA92500866FC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200C3152CA92500866FC5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		5AC200BC152C767A00866FC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5AC200BE152C9E0C00866FC5 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		5AC200BF152C9E0C00866FC5 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		5AC200C3152CA92500866FC5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AC200C4152CA92500866FC5 /* MapKit.framework in Frameworks */,
 				5AC200BD152C767A00866FC5 /* SystemConfiguration.framework in Frameworks */,
 				5AC200B9152C764B00866FC5 /* libsqlite3.dylib in Frameworks */,
 				5AC200B7152C764200866FC5 /* libz.dylib in Frameworks */,
@@ -122,6 +125,7 @@
 		5AC2000A152C35F300866FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AC200C3152CA92500866FC5 /* MapKit.framework */,
 				5AC200BC152C767A00866FC5 /* SystemConfiguration.framework */,
 				5AC200BA152C766600866FC5 /* CFNetwork.framework */,
 				5AC200B8152C764B00866FC5 /* libsqlite3.dylib */,

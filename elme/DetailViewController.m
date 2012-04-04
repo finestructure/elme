@@ -8,14 +8,19 @@
 
 #import "DetailViewController.h"
 
+#import "Project.h"
+
+
 @interface DetailViewController ()
 - (void)configureView;
 @end
 
+
 @implementation DetailViewController
 
 @synthesize detailItem = _detailItem;
-@synthesize detailDescriptionLabel = _detailDescriptionLabel;
+@synthesize mapView = _mapView;
+@synthesize tableView = _tableView;
 
 
 #pragma mark - Managing the detail item
@@ -34,7 +39,7 @@
 - (void)configureView
 {
   if (self.detailItem) {
-    self.detailDescriptionLabel.text = [self.detailItem name];
+    self.title = self.detailItem.name;
   }
 }
 
@@ -48,14 +53,32 @@
 
 - (void)viewDidUnload
 {
+  [self setMapView:nil];
+  [self setTableView:nil];
   [super viewDidUnload];
-  self.detailDescriptionLabel = nil;
 }
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
   return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+  return self.detailItem.units.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"UnitCell"];
+  NSDictionary *unit = [self.detailItem.units objectAtIndex:indexPath.row];
+  cell.textLabel.text = [unit valueForKey:@"name"];
+  return cell;
 }
 
 
