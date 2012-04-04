@@ -8,7 +8,10 @@
 
 #import "MasterViewController.h"
 
+#import "Configuration.h"
 #import "DetailViewController.h"
+#import "Globals.h"
+
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -18,13 +21,26 @@
 @implementation MasterViewController
 
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
+#pragma mark - Helpers
+
+- (void)registerDefaults {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  Configuration *defaultConf = [[Globals sharedInstance] defaultConfiguration];
+  NSDictionary *appdefaults = [NSDictionary dictionaryWithObject:defaultConf.name forKey:kConfigurationDefaultsKey];
+  [defaults registerDefaults:appdefaults];
+  [defaults synchronize];
 }
 
-- (void)viewDidLoad
-{
+
+#pragma mark - Init
+
+
+- (void)awakeFromNib {
+  [super awakeFromNib];
+}
+
+
+- (void)viewDidLoad {
   [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
   self.navigationItem.leftBarButtonItem = self.editButtonItem;
