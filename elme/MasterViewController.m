@@ -121,6 +121,13 @@
 }
 
 
+- (Project *)projectForIndexPath:(NSIndexPath *)indexPath {
+  CouchQueryRow *row = [self.dataSource rowAtIndex:indexPath.row];
+  Project *proj = [Project modelForDocument:row.document];
+  return proj;
+}
+
+
 #pragma mark - Init
 
 
@@ -182,8 +189,7 @@
 
 - (UITableViewCell *)couchTableSource:(CouchUITableSource*)source cellForRowAtIndexPath:(NSIndexPath *)indexPath; {  
   UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectCell"];
-  CouchQueryRow *row = [self.dataSource rowAtIndex:indexPath.row];
-  Project *proj = [Project modelForDocument:row.document];
+  Project *proj = [self projectForIndexPath:indexPath];
   cell.textLabel.text = proj.name;
   
   return cell;
@@ -224,8 +230,8 @@
 {
   if ([[segue identifier] isEqualToString:@"showDetail"]) {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    [[segue destinationViewController] setDetailItem:object];
+    Project *proj = [self projectForIndexPath:indexPath];
+    [[segue destinationViewController] setDetailItem:proj];
   }
 }
 
