@@ -21,10 +21,8 @@
 		5AC2002F152C35F300866FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000D152C35F300866FC5 /* Foundation.framework */; };
 		5AC20037152C35F300866FC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AC20035152C35F300866FC5 /* InfoPlist.strings */; };
 		5AC2003A152C35F300866FC5 /* elmeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20039152C35F300866FC5 /* elmeTests.m */; };
-		5AC20044152C473200866FC5 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC20043152C473200866FC5 /* icon-57.png */; };
-		5AC20046152C473600866FC5 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC20045152C473600866FC5 /* icon-114.png */; };
-		5AC20048152C483500866FC5 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC20047152C483500866FC5 /* icon-57.png */; };
-		5AC2004A152C484400866FC5 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC20049152C484400866FC5 /* icon-114.png */; };
+		5AC2004D152C4C1F00866FC5 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2004B152C4C1F00866FC5 /* icon-57.png */; };
+		5AC2004E152C4C1F00866FC5 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2004C152C4C1F00866FC5 /* icon-114.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +57,8 @@
 		5AC20036152C35F300866FC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5AC20038152C35F300866FC5 /* elmeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = elmeTests.h; sourceTree = "<group>"; };
 		5AC20039152C35F300866FC5 /* elmeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = elmeTests.m; sourceTree = "<group>"; };
-		5AC20043152C473200866FC5 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = "<group>"; };
-		5AC20045152C473600866FC5 /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = "<group>"; };
-		5AC20047152C483500866FC5 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = "<group>"; };
-		5AC20049152C484400866FC5 /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = "<group>"; };
+		5AC2004B152C4C1F00866FC5 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = SOURCE_ROOT; };
+		5AC2004C152C4C1F00866FC5 /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +123,8 @@
 		5AC20012152C35F300866FC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5AC2004B152C4C1F00866FC5 /* icon-57.png */,
+				5AC2004C152C4C1F00866FC5 /* icon-114.png */,
 				5AC20013152C35F300866FC5 /* elme-Info.plist */,
 				5AC20014152C35F300866FC5 /* InfoPlist.strings */,
 				5AC20017152C35F300866FC5 /* main.m */,
@@ -157,10 +155,6 @@
 		5AC2FFFC152C35F300866FC5 = {
 			isa = PBXGroup;
 			children = (
-				5AC20049152C484400866FC5 /* icon-114.png */,
-				5AC20047152C483500866FC5 /* icon-57.png */,
-				5AC20045152C473600866FC5 /* icon-114.png */,
-				5AC20043152C473200866FC5 /* icon-57.png */,
 				5AC20011152C35F300866FC5 /* elme */,
 				5AC20032152C35F300866FC5 /* elmeTests */,
 				5AC2000A152C35F300866FC5 /* Frameworks */,
@@ -241,10 +235,8 @@
 			files = (
 				5AC20016152C35F300866FC5 /* InfoPlist.strings in Resources */,
 				5AC2001F152C35F300866FC5 /* MainStoryboard.storyboard in Resources */,
-				5AC20044152C473200866FC5 /* icon-57.png in Resources */,
-				5AC20046152C473600866FC5 /* icon-114.png in Resources */,
-				5AC20048152C483500866FC5 /* icon-57.png in Resources */,
-				5AC2004A152C484400866FC5 /* icon-114.png in Resources */,
+				5AC2004D152C4C1F00866FC5 /* icon-57.png in Resources */,
+				5AC2004E152C4C1F00866FC5 /* icon-114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
