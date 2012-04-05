@@ -69,6 +69,14 @@
 {
   if (self.detailItem) {
     self.title = self.detailItem.name;
+    for (NSDictionary *unit in self.detailItem.units) {
+      NSString *address = [unit objectForKey:@"address"];
+      if (address != nil) {
+        NSString *title = [unit objectForKey:@"name"];
+        NSString *subtitle = address;
+        [self setPinForAddress:address withTitle:title subtitle:subtitle];
+      }
+    }
   }
 }
 
