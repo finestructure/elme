@@ -26,6 +26,21 @@
 
 #pragma mark - Helpers
 
+- (void)zoomMapToAnnotationRegion {
+  MKMapRect zoomRect = MKMapRectNull;
+  for (id <MKAnnotation> annotation in self.mapView.annotations)
+  {
+    MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+    MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0, 0);
+    if (MKMapRectIsNull(zoomRect)) {
+      zoomRect = pointRect;
+    } else {
+      zoomRect = MKMapRectUnion(zoomRect, pointRect);
+    }
+  }
+  [self.mapView setVisibleMapRect:zoomRect animated:YES];
+}
+
 
 - (void)setPinForAddress:(NSString *)address withTitle:(NSString *)title subtitle:(NSString *)subtitle {
   NSLog(@"address: %@", address);
@@ -47,6 +62,7 @@
       ann.subtitle = subtitle;
       ann.coordinate = best.location.coordinate;
       [self.mapView addAnnotation:ann];
+      [self zoomMapToAnnotationRegion];
     }
   }];
 }
