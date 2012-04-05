@@ -150,14 +150,10 @@
 		5AC20011152C35F300866FC5 /* elme */ = {
 			isa = PBXGroup;
 			children = (
-				5AC200C1152C9E1A00866FC5 /* Model */,
-				5AC20077152C64E000866FC5 /* Configuration.h */,
-				5AC20078152C64E000866FC5 /* Configuration.m */,
-				5AC20079152C64E000866FC5 /* Globals.h */,
-				5AC2007A152C64E000866FC5 /* Globals.m */,
 				5AC2001A152C35F300866FC5 /* AppDelegate.h */,
 				5AC2001B152C35F300866FC5 /* AppDelegate.m */,
 				5AC2001D152C35F300866FC5 /* MainStoryboard.storyboard */,
+				5AC200C1152C9E1A00866FC5 /* Model */,
 				5AC20020152C35F300866FC5 /* MasterViewController.h */,
 				5AC20021152C35F300866FC5 /* MasterViewController.m */,
 				5AC20023152C35F300866FC5 /* DetailViewController.h */,
@@ -204,6 +200,10 @@
 			children = (
 				5AC200CE152D7BE400866FC5 /* Annotation.h */,
 				5AC200CF152D7BE400866FC5 /* Annotation.m */,
+				5AC20077152C64E000866FC5 /* Configuration.h */,
+				5AC20078152C64E000866FC5 /* Configuration.m */,
+				5AC20079152C64E000866FC5 /* Globals.h */,
+				5AC2007A152C64E000866FC5 /* Globals.m */,
 				5AC200BE152C9E0C00866FC5 /* Project.h */,
 				5AC200BF152C9E0C00866FC5 /* Project.m */,
 			);
