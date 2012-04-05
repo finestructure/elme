@@ -131,6 +131,7 @@
   UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"UnitCell"];
   NSDictionary *unit = [self.detailItem.units objectAtIndex:indexPath.row];
   cell.textLabel.text = [unit valueForKey:@"name"];
+  cell.detailTextLabel.text = [unit valueForKey:@"address"];
   return cell;
 }
 
