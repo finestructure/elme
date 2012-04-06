@@ -68,6 +68,69 @@
 }
 
 
+- (void)addAnnotationWithTitle:(NSString *)title subtitle:(NSString *)subtitle coordinate:(CLLocationCoordinate2D)coordinate
+{
+  Annotation *ann = [[Annotation alloc] init];
+  ann.title = title;
+  ann.subtitle = subtitle;
+  ann.coordinate = coordinate;
+  [self.mapView addAnnotation:ann];
+  [self zoomMapToAnnotationRegion];
+}
+
+
+- (void)updateUnitAtIndex:(NSUInteger)index withObject:(NSDictionary *)newUnit {
+  NSMutableArray *newArray = [self.detailItem.units mutableCopy];
+  [newArray replaceObjectAtIndex:index withObject:newUnit];
+  self.detailItem.units = newArray;
+  RESTOperation* op = [self.detailItem save];
+  [op onCompletion: ^{
+    if (op.error) {
+      NSLog(@"Error while saving coordinates: %@", [op.error localizedDescription]);
+    }
+  }];
+  [op start];
+}
+
+
+- (void)setPinForUnitAtIndex:(NSUInteger)index {
+  NSDictionary *unit = [self.detailItem.units objectAtIndex:index];
+  NSString *title = [unit objectForKey:@"name"];
+  NSString *subtitle = [unit objectForKey:@"address"];
+  
+  if ([unit objectForKey:@"latitude"] && [unit objectForKey:@"longitude"]) {
+    CLLocationDegrees latitude = [[unit objectForKey:@"latitude"] doubleValue];
+    CLLocationDegrees longitude = [[unit objectForKey:@"longitude"] doubleValue];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+    [self addAnnotationWithTitle:title subtitle:subtitle coordinate:coordinate];
+  } else {
+    CLGeocoder *coder = [[CLGeocoder alloc] init];
+    NSString *address = [unit objectForKey:@"address"];
+    [coder geocodeAddressString:address completionHandler:^(NSArray *__strong placemarks, NSError *__strong error) {
+      if (error != nil) {
+        if ([error code] == kCLErrorGeocodeFoundNoResult) {
+          NSLog(@"*** no result found *** (for: %@)", address);
+        } else {
+          NSLog(@"geocoding error: %@", [error localizedDescription]);
+        }
+      } else if ([placemarks count] > 0) {
+        CLPlacemark *best = [placemarks objectAtIndex:0];
+        NSLog(@"Best placemark: %@", best);
+        CLLocationCoordinate2D coordinate = best.location.coordinate;
+        [self addAnnotationWithTitle:title subtitle:subtitle coordinate:coordinate];
+        { // save coordinates to unit
+          NSMutableDictionary *newUnit = [unit mutableCopy];
+          [newUnit setValue:[NSNumber numberWithDouble:coordinate.longitude] forKey:@"longitude"];
+          [newUnit setValue:[NSNumber numberWithDouble:coordinate.latitude] forKey:@"latitude"];
+          [self updateUnitAtIndex:index withObject:newUnit];
+        }
+      }
+    }];
+
+  }
+}
+
+
 #pragma mark - Managing the detail item
 
 
@@ -85,13 +148,8 @@
 {
   if (self.detailItem) {
     self.title = self.detailItem.name;
-    for (NSDictionary *unit in self.detailItem.units) {
-      NSString *address = [unit objectForKey:@"address"];
-      if (address != nil) {
-        NSString *title = [unit objectForKey:@"name"];
-        NSString *subtitle = address;
-        [self setPinForAddress:address withTitle:title subtitle:subtitle];
-      }
+    for (NSUInteger index = 0; index < self.detailItem.units.count; index++) {
+      [self setPinForUnitAtIndex:index];
     }
   }
 }
