@@ -14,8 +14,6 @@
 #import "Globals.h"
 #import "Project.h"
 
-#import <CouchCocoa/CouchCocoa.h>
-#import <CouchCocoa/CouchTouchDBServer.h>
 #import <CouchCocoa/CouchDesignDocument_Embedded.h>
 
 
@@ -25,8 +23,6 @@
 
 
 @implementation MasterViewController
-
-@synthesize dataSource = _dataSource;
 
 
 #pragma mark - Helpers
@@ -60,16 +56,27 @@
 }
 
 
-- (void)failedWithError:(NSError *)error {
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"General error dialog title") message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-  [alert show];
-}
-
-
 - (Project *)projectForIndexPath:(NSIndexPath *)indexPath {
   CouchQueryRow *row = [self.dataSource rowAtIndex:indexPath.row];
   Project *proj = [Project modelForDocument:row.document];
   return proj;
+}
+
+
+- (void)insertNewObject:(id)sender
+{
+  Project *proj = [[Project alloc] initWithNewDocumentInDatabase:[Database sharedInstance].database];
+  proj.name = @"Neues Projekt";
+  
+  // Save the document, asynchronously:
+  RESTOperation* op = [proj save];
+  [op onCompletion: ^{
+    if (op.error) {
+      [self failedWithError:op.error];
+    }
+    [self.dataSource.query start];
+  }];
+  [op start];
 }
 
 
@@ -100,29 +107,6 @@
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-  return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-
-- (void)insertNewObject:(id)sender
-{
-  Project *proj = [[Project alloc] initWithNewDocumentInDatabase:[Database sharedInstance].database];
-  proj.name = @"Neues Projekt";
-  
-  // Save the document, asynchronously:
-  RESTOperation* op = [proj save];
-  [op onCompletion: ^{
-    if (op.error) {
-      [self failedWithError:op.error];
-    }
-    [self.dataSource.query start];
-  }];
-  [op start];
-}
-
-
 #pragma mark - CouchUITableDelegate
 
 
@@ -135,35 +119,8 @@
 }
 
 
-- (void)couchTableSource:(CouchUITableSource*)source updateFromQuery:(CouchLiveQuery*)query previousRows:(NSArray *)oldRows
-{
-  BOOL (^isModified)(id, id) = ^ BOOL (id oldObj, id newObj) {
-    return ! [[oldObj documentRevision] isEqualToString:[newObj documentRevision]];
-  };
-  
-  NSArray *newRows = query.rows.allObjects;
-  NSArray *addedIndexPaths = [self addedIndexPathsOldRows:oldRows newRows:newRows];
-  NSArray *deletedIndexPaths = [self deletedIndexPathsOldRows:oldRows newRows:newRows];
-  NSArray *modifiedIndexPaths = [self modifiedIndexPathsOldRows:oldRows newRows:newRows usingBlock:^BOOL(id oldObj, id newObj) {
-    return isModified(oldObj, newObj);
-  }];
-  
-  [self.tableView beginUpdates];
-  [self.tableView insertRowsAtIndexPaths:addedIndexPaths withRowAnimation:UITableViewRowAnimationTop];
-  [self.tableView deleteRowsAtIndexPaths:deletedIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
-  [self.tableView reloadRowsAtIndexPaths:modifiedIndexPaths withRowAnimation:UITableViewRowAnimationRight];
-  [self.tableView endUpdates];
-}
+#pragma mark - Segue
 
-
-- (void)couchTableSource:(CouchUITableSource*)source
-         operationFailed:(RESTOperation*)op
-{
-  [self failedWithError:op.error];
-}
-
-
-#pragma mark - Seque
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -172,78 +129,6 @@
     Project *proj = [self projectForIndexPath:indexPath];
     [[segue destinationViewController] setDetailItem:proj];
   }
-}
-
-
-#pragma mark - Table view update helpers
-
-
--(NSDictionary *)indexMapForRows:(NSArray *)rows {
-  NSMutableDictionary *indexMap = [[NSMutableDictionary alloc] initWithCapacity:[rows count]];
-  for (int index = 0; index < [rows count]; ++index) {
-    CouchQueryRow *row = [rows objectAtIndex:index];
-    [indexMap setObject:[NSIndexPath indexPathForRow:index inSection:0] forKey:[row documentID]];
-  }
-  return indexMap;
-}
-
-
--(NSArray *)deletedIndexPathsOldRows:(NSArray *)oldRows newRows:(NSArray *)newRows {
-  NSDictionary *oldIndexMap = [self indexMapForRows:oldRows];
-  NSDictionary *newIndexMap = [self indexMapForRows:newRows];
-  
-  NSMutableSet *remainder = [NSMutableSet setWithArray:oldIndexMap.allKeys];
-  NSSet *newIds = [NSSet setWithArray:newIndexMap.allKeys];
-  [remainder minusSet:newIds];
-  NSArray *deletedIds = remainder.allObjects;
-  
-  NSArray *deletedIndexPaths = [oldIndexMap objectsForKeys:deletedIds notFoundMarker:[NSNull null]];  
-  return deletedIndexPaths;
-}
-
-
--(NSArray *)addedIndexPathsOldRows:(NSArray *)oldRows newRows:(NSArray *)newRows {
-  NSDictionary *oldIndexMap = [self indexMapForRows:oldRows];
-  NSDictionary *newIndexMap = [self indexMapForRows:newRows];
-  
-  NSMutableSet *remainder = [NSMutableSet setWithArray:newIndexMap.allKeys];
-  NSSet *oldIds = [NSSet setWithArray:oldIndexMap.allKeys];
-  [remainder minusSet:oldIds];
-  NSArray *addedIds = remainder.allObjects;
-  
-  NSArray *addedIndexPaths = [newIndexMap objectsForKeys:addedIds notFoundMarker:[NSNull null]];  
-  return addedIndexPaths;
-}
-
-
--(NSArray *)modifiedIndexPathsOldRows:(NSArray *)oldRows newRows:(NSArray *)newRows usingBlock:(BOOL (^)(id, id))isModified {
-  NSDictionary *oldIndexMap = [self indexMapForRows:oldRows];
-  NSDictionary *newIndexMap = [self indexMapForRows:newRows];
-  
-  NSMutableSet *intersection = [NSMutableSet setWithArray:oldIndexMap.allKeys];
-  [intersection intersectSet:[NSSet setWithArray:newIndexMap.allKeys]];
-  NSArray *intersectionIds = intersection.allObjects;
-  
-  NSArray *intersectionOldIndexPaths = [oldIndexMap objectsForKeys:intersectionIds notFoundMarker:[NSNull null]];
-  NSArray *intersectionNewIndexPaths = [newIndexMap objectsForKeys:intersectionIds notFoundMarker:[NSNull null]];
-  NSAssert([intersectionIds count] == [intersectionOldIndexPaths count] &&
-           [intersectionIds count] == [intersectionNewIndexPaths count],
-           @"intersection index counts must be equal");
-  
-  NSMutableArray *modifiedIndexPaths = [NSMutableArray array];
-  for (NSUInteger index = 0; index < [intersectionIds count]; ++index) {
-    NSIndexPath *oldIndexPath = [intersectionOldIndexPaths objectAtIndex:index];
-    NSIndexPath *newIndexPath = [intersectionNewIndexPaths objectAtIndex:index];
-    CouchQueryRow *oldRow = [oldRows objectAtIndex:oldIndexPath.row];
-    CouchQueryRow *newRow = [newRows objectAtIndex:newIndexPath.row];
-    NSAssert([[oldRow documentID] isEqualToString:[newRow documentID]],
-             @"document ids must be equal for objects in intersection");
-    if (isModified(oldRow, newRow)) {
-      [modifiedIndexPaths addObject:newIndexPath];
-    }
-  }
-  
-  return modifiedIndexPaths;
 }
 
 

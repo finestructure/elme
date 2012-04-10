@@ -6,14 +6,10 @@
 //  Copyright (c) 2012 abstracture GmbH & Co. KG. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-#import <CouchCocoa/CouchUITableSource.h>
+#import "CouchTableViewController.h"
 
 @class CouchDatabase;
 
-@interface MasterViewController : UITableViewController<CouchUITableDelegate>
-
-@property (nonatomic, retain) CouchUITableSource* dataSource;
+@interface MasterViewController : CouchTableViewController
 
 @end
