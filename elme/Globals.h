@@ -23,6 +23,7 @@ extern NSString * const kConfigurationDefaultsKey;
 - (NSArray *)configurations;
 - (Configuration *)defaultConfiguration;
 - (Configuration *)currentConfiguration;
+- (void)registerDefaults;
 
 @end
 

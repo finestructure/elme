@@ -34,15 +34,6 @@
 
 #pragma mark - Helpers
 
-- (void)registerDefaults {
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  Configuration *defaultConf = [[Globals sharedInstance] defaultConfiguration];
-  NSDictionary *appdefaults = [NSDictionary dictionaryWithObject:defaultConf.name forKey:kConfigurationDefaultsKey];
-  [defaults registerDefaults:appdefaults];
-  [defaults synchronize];
-}
-
-
 - (void)setupTouchdb {
   Configuration *conf = [[Globals sharedInstance] currentConfiguration];
   { // register credentials
@@ -145,9 +136,7 @@
   self.navigationItem.rightBarButtonItem = addButton;
 
   gCouchLogLevel = 1;
-  
-  [self registerDefaults];
-  
+    
   [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kConfigurationDefaultsKey options:NSKeyValueObservingOptionNew context:nil];
   
   [self setupTouchdb];

@@ -146,5 +146,14 @@ NSString * const kConfigurationDefaultsKey = @"Configuration";
 }
 
 
+- (void)registerDefaults {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  Configuration *defaultConf = [self defaultConfiguration];
+  NSDictionary *appdefaults = [NSDictionary dictionaryWithObject:defaultConf.name forKey:kConfigurationDefaultsKey];
+  [defaults registerDefaults:appdefaults];
+  [defaults synchronize];
+}
+
+
 @end
 
