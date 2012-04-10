@@ -9,6 +9,7 @@
 #import "IncidentViewController.h"
 
 #import "Database.h"
+#import "Incident.h"
 
 #import <CouchCocoa/CouchCocoa.h>
 #import <CouchCocoa/CouchDesignDocument_Embedded.h>
@@ -66,6 +67,21 @@
 }
 
 
+- (void)insertNewObject:(id)sender
+{
+  id obj = [[Incident alloc] initWithNewDocumentInDatabase:[Database sharedInstance].database];
+  
+  RESTOperation* op = [obj save];
+  [op onCompletion: ^{
+    if (op.error) {
+      [self failedWithError:op.error];
+    }
+    [self.dataSource.query start];
+  }];
+  [op start];
+}
+
+
 #pragma mark - Init & view lifecycle
 
 
@@ -82,6 +98,12 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  self.navigationItem.leftBarButtonItem = self.editButtonItem;
+  
+  UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+  self.navigationItem.rightBarButtonItem = addButton;
+
   [self setupDataSource];
 }
 
