@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CouchTableViewController : UIViewController
+#import <CouchCocoa/CouchUITableSource.h>
+
+@interface CouchTableViewController : UIViewController<CouchUITableDelegate>
+
+@property (nonatomic, retain) CouchUITableSource* dataSource;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
