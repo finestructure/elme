@@ -99,6 +99,8 @@
 {
   [super viewDidLoad];
   
+  self.title = NSLocalizedString(@"Incidents", @"Incidents view title");
+  
   self.navigationItem.leftBarButtonItem = self.editButtonItem;
   
   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
