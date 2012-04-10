@@ -56,7 +56,7 @@
   };
 
   // Create a query sorted by descending date, i.e. newest items first:
-  CouchLiveQuery* query = [[design queryViewNamed: @"projects"] asLiveQuery];
+  CouchLiveQuery* query = [[design queryViewNamed: @"incidents"] asLiveQuery];
   query.descending = YES;
   self.dataSource.query = query;
   
