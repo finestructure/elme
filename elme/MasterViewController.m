@@ -254,18 +254,13 @@
     _pull = [self.database pullFromDatabaseAtURL:newRemoteURL];
     _push = [self.database pushToDatabaseAtURL:newRemoteURL];
     _pull.continuous = _push.continuous = YES;
-    
-    [_pull addObserver: self forKeyPath: @"completed" options: 0 context: NULL];
-    [_push addObserver: self forKeyPath: @"completed" options: 0 context: NULL];
   }
 }
 
 
 - (void) forgetSync {
-  [_pull removeObserver: self forKeyPath: @"completed"];
   [_pull stop];
   _pull = nil;
-  [_push removeObserver: self forKeyPath: @"completed"];
   [_push stop];
   _push = nil;
 }
@@ -277,16 +272,7 @@
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object 
                          change:(NSDictionary *)change context:(void *)context
 {
-  if (object == _pull || object == _push) {
-    unsigned completed = _pull.completed + _push.completed;
-    unsigned total = _pull.total + _push.total;
-    NSLog(@"SYNC progress: %u / %u", completed, total);
-    //    if (total > 0 && completed < total) {
-    //      [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    //    } else {
-    //      [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    //    }
-  } else if (object == [NSUserDefaults standardUserDefaults]) {
+  if (object == [NSUserDefaults standardUserDefaults]) {
     NSLog(@"KVO for %@, new conf: %@", keyPath, [[Globals sharedInstance] currentConfiguration].displayName);
     [self configurationChanged];
   }
