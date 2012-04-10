@@ -1,0 +1,22 @@
+//
+//  Database.h
+//  elme
+//
+//  Created by Sven A. Schmidt on 10.04.12.
+//  Copyright (c) 2012 abstracture GmbH & Co. KG. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@class CouchDatabase;
+@class CouchDesignDocument;
+
+@interface Database : NSObject
+
+@property (readonly) CouchDatabase *database;
+
++ (Database *)sharedInstance;
+- (BOOL)connect:(NSError **)outError;
+- (CouchDesignDocument *)designDocumentWithName:(NSString *)name;
+
+@end

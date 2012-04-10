@@ -152,6 +152,22 @@ NSString * const kConfigurationDefaultsKey = @"Configuration";
   NSDictionary *appdefaults = [NSDictionary dictionaryWithObject:defaultConf.name forKey:kConfigurationDefaultsKey];
   [defaults registerDefaults:appdefaults];
   [defaults synchronize];
+  
+  // observe key changes
+  [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kConfigurationDefaultsKey options:NSKeyValueObservingOptionNew context:nil];
+}
+
+
+#pragma mark - KVO
+
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object 
+                         change:(NSDictionary *)change context:(void *)context
+{
+  if (object == [NSUserDefaults standardUserDefaults]) {
+    NSLog(@"KVO for %@, new conf: %@", keyPath, [[Globals sharedInstance] currentConfiguration].displayName);
+    // send notification
+  }
 }
 
 

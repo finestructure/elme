@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+#import "Database.h"
 #import "Globals.h"
 
 @implementation AppDelegate
@@ -17,6 +18,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [[Globals sharedInstance] registerDefaults];
+  NSError *error = nil;
+  BOOL connected = [[Database sharedInstance] connect:&error];
+  if (! connected) {
+    NSLog(@"Connecting to database failed: %@", [error localizedDescription]);
+  }
   return YES;
 }
 							

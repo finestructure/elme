@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A7EDC2A153431F90065CFA1 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC29153431F90065CFA1 /* Database.m */; };
 		5AC2000C152C35F300866FC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000B152C35F300866FC5 /* UIKit.framework */; };
 		5AC2000E152C35F300866FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000D152C35F300866FC5 /* Foundation.framework */; };
 		5AC20010152C35F300866FC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000F152C35F300866FC5 /* CoreGraphics.framework */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A7EDC28153431F90065CFA1 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
+		5A7EDC29153431F90065CFA1 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		5AC20007152C35F300866FC5 /* elme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = elme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2000B152C35F300866FC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5AC2000D152C35F300866FC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -206,6 +209,8 @@
 				5AC2007A152C64E000866FC5 /* Globals.m */,
 				5AC200BE152C9E0C00866FC5 /* Project.h */,
 				5AC200BF152C9E0C00866FC5 /* Project.m */,
+				5A7EDC28153431F90065CFA1 /* Database.h */,
+				5A7EDC29153431F90065CFA1 /* Database.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				5AC2007C152C64E000866FC5 /* Globals.m in Sources */,
 				5AC200C0152C9E0C00866FC5 /* Project.m in Sources */,
 				5AC200D0152D7BE400866FC5 /* Annotation.m in Sources */,
+				5A7EDC2A153431F90065CFA1 /* Database.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +536,7 @@
 				5AC2003F152C35F300866FC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AC20040152C35F300866FC5 /* Build configuration list for PBXNativeTarget "elmeTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +545,7 @@
 				5AC20042152C35F300866FC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

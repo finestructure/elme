@@ -14,7 +14,6 @@
 
 @interface MasterViewController : UITableViewController<CouchUITableDelegate>
 
-@property (nonatomic, retain) CouchDatabase *database;
 @property (nonatomic, retain) CouchUITableSource* dataSource;
 
 @end
