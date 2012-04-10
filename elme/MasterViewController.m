@@ -89,8 +89,6 @@
 
   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
   self.navigationItem.rightBarButtonItem = addButton;
-
-  gCouchLogLevel = 1;
   
   [self setupDataSource];
 }

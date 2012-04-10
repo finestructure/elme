@@ -37,6 +37,8 @@
 
 
 - (BOOL)connect:(NSError **)outError {
+  gCouchLogLevel = 1;
+
   Configuration *conf = [[Globals sharedInstance] currentConfiguration];
   { // register credentials
     NSURLCredential* cred;
