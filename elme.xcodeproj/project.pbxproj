@@ -11,6 +11,7 @@
 		5A7EDC2E1534580F0065CFA1 /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */; };
 		5A7EDC311534588B0065CFA1 /* CouchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */; };
 		5A7EDC5C153489910065CFA1 /* Incident.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC5B153489910065CFA1 /* Incident.m */; };
+		5A7EDC5F153579EC0065CFA1 /* EditIncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC5E153579EB0065CFA1 /* EditIncidentViewController.m */; };
 		5AC2000C152C35F300866FC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000B152C35F300866FC5 /* UIKit.framework */; };
 		5AC2000E152C35F300866FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000D152C35F300866FC5 /* Foundation.framework */; };
 		5AC20010152C35F300866FC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000F152C35F300866FC5 /* CoreGraphics.framework */; };
@@ -59,6 +60,8 @@
 		5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchTableViewController.m; sourceTree = "<group>"; };
 		5A7EDC5A153489910065CFA1 /* Incident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Incident.h; sourceTree = "<group>"; };
 		5A7EDC5B153489910065CFA1 /* Incident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Incident.m; sourceTree = "<group>"; };
+		5A7EDC5D153579EB0065CFA1 /* EditIncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditIncidentViewController.h; sourceTree = "<group>"; };
+		5A7EDC5E153579EB0065CFA1 /* EditIncidentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditIncidentViewController.m; sourceTree = "<group>"; };
 		5AC20007152C35F300866FC5 /* elme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = elme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2000B152C35F300866FC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5AC2000D152C35F300866FC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -170,6 +173,8 @@
 				5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */,
 				5A7EDC2C1534580F0065CFA1 /* IncidentViewController.h */,
 				5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */,
+				5A7EDC5D153579EB0065CFA1 /* EditIncidentViewController.h */,
+				5A7EDC5E153579EB0065CFA1 /* EditIncidentViewController.m */,
 				5AC20020152C35F300866FC5 /* MasterViewController.h */,
 				5AC20021152C35F300866FC5 /* MasterViewController.m */,
 				5AC20023152C35F300866FC5 /* DetailViewController.h */,
@@ -375,6 +380,7 @@
 				5A7EDC2E1534580F0065CFA1 /* IncidentViewController.m in Sources */,
 				5A7EDC311534588B0065CFA1 /* CouchTableViewController.m in Sources */,
 				5A7EDC5C153489910065CFA1 /* Incident.m in Sources */,
+				5A7EDC5F153579EC0065CFA1 /* EditIncidentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
