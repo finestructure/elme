@@ -15,6 +15,7 @@
 @implementation EditIncidentViewController
 
 @synthesize detailItem = _detailItem;
+@synthesize descriptionTextField = _descriptionTextField;
 
 
 #pragma mark - Managing the detail item
@@ -49,6 +50,7 @@
 
 - (void)viewDidUnload
 {
+  [self setDescriptionTextField:nil];
   [super viewDidUnload];
   // Release any retained subviews of the main view.
 }
@@ -72,5 +74,22 @@
   [self dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)backgroundTapped:(id)sender {
+  [self.view endEditing:YES];
+}
+
+
+#pragma mark - UITextViewDelegate
+
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+  if( [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location == NSNotFound ) {
+    return YES;
+  }
+  
+  [self.descriptionTextField resignFirstResponder];
+  return NO;
+}
 
 @end

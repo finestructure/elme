@@ -10,11 +10,15 @@
 
 @class Incident;
 
-@interface EditIncidentViewController : UIViewController
+@interface EditIncidentViewController : UIViewController<UITextViewDelegate>
 
 @property (strong, nonatomic) Incident *detailItem;
 
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextField;
+
 - (IBAction)save:(id)sender;
 - (IBAction)cancel:(id)sender;
+
+- (IBAction)backgroundTapped:(id)sender;
 
 @end
