@@ -67,6 +67,13 @@
 }
 
 
+- (Incident *)incidentForIndexPath:(NSIndexPath *)indexPath {
+  CouchQueryRow *row = [self.dataSource rowAtIndex:indexPath.row];
+  Incident *obj = [Incident modelForDocument:row.document];
+  return obj;
+}
+
+
 - (void)insertNewObject:(id)sender
 {
   id obj = [[Incident alloc] initWithNewDocumentInDatabase:[Database sharedInstance].database];
@@ -112,6 +119,23 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
   return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+#pragma mark - CouchUITableDelegate
+
+
+- (UITableViewCell *)couchTableSource:(CouchUITableSource*)source cellForRowAtIndexPath:(NSIndexPath *)indexPath; {
+  static NSDateFormatter *formatter = nil;
+  if (formatter == nil) {
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterMediumStyle];
+  }
+  UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"IncidentCell"];
+  Incident *incident = [self incidentForIndexPath:indexPath];
+  cell.textLabel.text = [formatter stringFromDate:incident.created_at];
+  return cell;
 }
 
 
