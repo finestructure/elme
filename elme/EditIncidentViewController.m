@@ -14,21 +14,38 @@
 
 @implementation EditIncidentViewController
 
+@synthesize detailItem = _detailItem;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+#pragma mark - Managing the detail item
+
+
+- (void)setDetailItem:(id)newDetailItem
 {
-  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
-    // Custom initialization
+  if (_detailItem != newDetailItem) {
+    _detailItem = newDetailItem;
+    
+    [self configureView];
   }
-  return self;
 }
+
+
+- (void)configureView
+{
+  if (self.detailItem) {
+  }
+}
+
+
+#pragma mark - Init and view lifecycle
+
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-	// Do any additional setup after loading the view.
+  [self configureView];
 }
+
 
 - (void)viewDidUnload
 {
@@ -36,17 +53,24 @@
   // Release any retained subviews of the main view.
 }
 
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
   return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+#pragma mark - Actions
+
+
 - (IBAction)save:(id)sender {
   [self dismissModalViewControllerAnimated:YES];
 }
 
+
 - (IBAction)cancel:(id)sender {
   [self dismissModalViewControllerAnimated:YES];
 }
+
 
 @end

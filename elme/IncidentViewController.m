@@ -9,6 +9,7 @@
 #import "IncidentViewController.h"
 
 #import "Database.h"
+#import "EditIncidentViewController.h"
 #import "Incident.h"
 
 #import <CouchCocoa/CouchCocoa.h>
@@ -136,6 +137,18 @@
   Incident *incident = [self incidentForIndexPath:indexPath];
   cell.textLabel.text = [formatter stringFromDate:incident.created_at];
   return cell;
+}
+
+
+#pragma mark - Segue
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([[segue identifier] isEqualToString:@"NewIncident"]) {
+    id obj = [[Incident alloc] init];
+    [(EditIncidentViewController *)[segue destinationViewController] setDetailItem:obj];
+  }
 }
 
 
