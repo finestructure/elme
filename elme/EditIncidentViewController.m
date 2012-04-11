@@ -63,6 +63,10 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  [self.mapView.userLocation addObserver:self  
+                              forKeyPath:@"location"  
+                                 options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)  
+                                 context:NULL];
   [self configureView];
 }
 
@@ -128,6 +132,20 @@
 
 - (IBAction)backgroundTapped:(id)sender {
   [self.view endEditing:YES];
+}
+
+
+#pragma mark - KVO
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath  
+                      ofObject:(id)object  
+                        change:(NSDictionary *)change  
+                       context:(void *)context {  
+  if ([self.mapView showsUserLocation]) {  
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 2000, 2000);    
+    [self.mapView setRegion:region animated:YES];
+  }
 }
 
 
