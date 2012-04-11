@@ -8,6 +8,9 @@
 
 #import "EditIncidentViewController.h"
 
+#import "Database.h"
+#import "Incident.h"
+
 @interface EditIncidentViewController ()
 
 @end
@@ -16,6 +19,15 @@
 
 @synthesize detailItem = _detailItem;
 @synthesize descriptionTextField = _descriptionTextField;
+
+
+#pragma mark - Helpers
+
+
+- (void)failedWithError:(NSError *)error {
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"General error dialog title") message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+  [alert show];
+}
 
 
 #pragma mark - Managing the detail item
@@ -82,6 +94,20 @@
 
 
 - (IBAction)save:(id)sender {
+  if (self.detailItem == nil) {
+    self.detailItem = [[Incident alloc] initWithNewDocumentInDatabase:[Database sharedInstance].database];
+  }
+
+  self.detailItem.desc = self.descriptionTextField.text;
+  
+  RESTOperation* op = [self.detailItem save];
+  [op onCompletion: ^{
+    if (op.error) {
+      [self failedWithError:op.error];
+    }
+  }];
+  [op start];
+  
   [self dismissModalViewControllerAnimated:YES];
 }
 

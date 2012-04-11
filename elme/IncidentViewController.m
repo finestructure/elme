@@ -146,8 +146,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
   if ([[segue identifier] isEqualToString:@"NewIncident"]) {
-    id obj = [[Incident alloc] init];
-    [(EditIncidentViewController *)[segue destinationViewController] setDetailItem:obj];
+    [(EditIncidentViewController *)[segue destinationViewController] setDetailItem:nil];
   }
 }
 
