@@ -228,7 +228,10 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="createdAtLabel" destination="Ofg-RQ-yL0" id="nYy-qK-xLi"/>
                         <outlet property="descriptionTextField" destination="q8s-DI-t8Q" id="bqc-zj-GRp"/>
+                        <outlet property="mapView" destination="Gvx-0u-WDR" id="3Tx-eN-y3K"/>
+                        <outlet property="projectLabel" destination="Vff-c0-awf" id="nNj-4y-rP6"/>
                     </connections>
                 </viewController>
             </objects>
@@ -296,39 +299,6 @@
             <point key="canvasLocation" x="902" y="64"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CouchTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CouchTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="EditIncidentViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditIncidentViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundTapped:"/>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="descriptionTextField" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="IncidentViewController" superclassName="CouchTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IncidentViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="insertNewObject:"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="CouchTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

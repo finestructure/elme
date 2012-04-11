@@ -18,6 +18,9 @@
 @implementation EditIncidentViewController
 
 @synthesize detailItem = _detailItem;
+@synthesize projectLabel = _projectLabel;
+@synthesize createdAtLabel = _createdAtLabel;
+@synthesize mapView = _mapView;
 @synthesize descriptionTextField = _descriptionTextField;
 
 
@@ -46,6 +49,10 @@
 - (void)configureView
 {
   if (self.detailItem) {
+
+  } else {
+    self.projectLabel.text = NSLocalizedString(@"kein Projekt", @"no project assigned label");
+    self.createdAtLabel.text = @"–";
   }
 }
 
@@ -63,6 +70,9 @@
 - (void)viewDidUnload
 {
   [self setDescriptionTextField:nil];
+  [self setProjectLabel:nil];
+  [self setCreatedAtLabel:nil];
+  [self setMapView:nil];
   [super viewDidUnload];
   // Release any retained subviews of the main view.
 }

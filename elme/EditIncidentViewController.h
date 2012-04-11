@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @class Incident;
 
@@ -14,6 +15,9 @@
 
 @property (strong, nonatomic) Incident *detailItem;
 
+@property (weak, nonatomic) IBOutlet UILabel *projectLabel;
+@property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextField;
 
 - (IBAction)save:(id)sender;
