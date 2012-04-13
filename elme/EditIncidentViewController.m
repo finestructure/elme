@@ -162,10 +162,6 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [self.mapView.userLocation addObserver:self  
-                              forKeyPath:@"location"  
-                                 options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)  
-                                 context:NULL];
   [self showUnits];
   [self configureView];
 }
@@ -191,6 +187,10 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   
+  [self.mapView.userLocation addObserver:self  
+                              forKeyPath:@"location"  
+                                 options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)  
+                                 context:NULL];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
