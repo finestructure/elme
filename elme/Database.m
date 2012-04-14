@@ -57,13 +57,17 @@
   { // set up database
     CouchTouchDBServer *server = [CouchTouchDBServer sharedInstance];
     if (server.error) {
-      *outError = server.error;
+      if (outError != nil) {
+        *outError = server.error;
+      }
       return NO;
     }
     _database = [server databaseNamed:conf.localDbname];
     NSError *error;
     if (![_database ensureCreated:&error]) {
-      *outError = server.error;
+      if (outError != nil) {
+        *outError = server.error;
+      }
       return NO;
     }
   }
