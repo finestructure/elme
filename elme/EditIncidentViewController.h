@@ -14,6 +14,7 @@
 @interface EditIncidentViewController : UIViewController<UITextViewDelegate>
 
 @property (strong, nonatomic) Incident *detailItem;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)save:(id)sender;

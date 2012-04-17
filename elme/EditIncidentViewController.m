@@ -11,11 +11,14 @@
 #import "Annotation.h"
 #import "Database.h"
 #import "Incident.h"
+#import "LocationCell.h"
 
 #import <CouchCocoa/CouchDesignDocument_Embedded.h>
 
 
-@interface EditIncidentViewController ()
+@interface EditIncidentViewController () {
+  NSMutableArray *cells;
+}
 
 @end
 
@@ -169,13 +172,20 @@
   [super viewDidLoad];
   [self configureView];
   
-  [self.tableView registerNib:[UINib nibWithNibName:@"LocationCell" bundle:nil] forCellReuseIdentifier:@"LocationCell"];
+  cells = [NSMutableArray array];
+  NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LocationCell" owner:self options:nil];
+  [cells addObject:[nib objectAtIndex:0]];
+  nib = [[NSBundle mainBundle] loadNibNamed:@"DescriptionCell" owner:self options:nil];
+  [cells addObject:[nib objectAtIndex:0]];
+  nib = [[NSBundle mainBundle] loadNibNamed:@"ImagesCell" owner:self options:nil];
+  [cells addObject:[nib objectAtIndex:0]];
 }
 
 
 - (void)viewDidUnload
 {
   [self setTableView:nil];
+  cells = nil;
   [super viewDidUnload];
 }
 
@@ -238,12 +248,22 @@
 }
 
 
-#pragma mark UITableViewDataSource
+#pragma mark - UITableViewDelegate
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  UITableViewCell *cell = [cells objectAtIndex:indexPath.section];
+  return cell.frame.size.height;
+}
+
+
+#pragma mark - UITableViewDataSource
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
+  UITableViewCell *cell = [cells objectAtIndex:indexPath.section];
   return cell;
 }
 
@@ -256,7 +276,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-  return 4;
+  return 3;
 }
 
 
@@ -273,10 +293,6 @@
 
     case 2:
       return NSLocalizedString(@"Bilder", @"Images header");
-      break;
-
-    case 3:
-      return NSLocalizedString(@"Audionotizen", @"Voice notes header");
       break;
 
     default:
