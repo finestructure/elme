@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A60BCB8153DC32F001B69E6 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BCB7153DC32F001B69E6 /* LocationCell.xib */; };
 		5A7EDC2A153431F90065CFA1 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC29153431F90065CFA1 /* Database.m */; };
 		5A7EDC2E1534580F0065CFA1 /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */; };
 		5A7EDC311534588B0065CFA1 /* CouchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A60BCB7153DC32F001B69E6 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		5A7EDC28153431F90065CFA1 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		5A7EDC29153431F90065CFA1 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		5A7EDC2C1534580F0065CFA1 /* IncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentViewController.h; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				5AC20021152C35F300866FC5 /* MasterViewController.m */,
 				5AC20023152C35F300866FC5 /* DetailViewController.h */,
 				5AC20024152C35F300866FC5 /* DetailViewController.m */,
+				5A60BCB7153DC32F001B69E6 /* LocationCell.xib */,
 				5AC20012152C35F300866FC5 /* Supporting Files */,
 			);
 			path = elme;
@@ -321,6 +324,7 @@
 				5AC2001F152C35F300866FC5 /* MainStoryboard.storyboard in Resources */,
 				5AC2004D152C4C1F00866FC5 /* icon-57.png in Resources */,
 				5AC2004E152C4C1F00866FC5 /* icon-114.png in Resources */,
+				5A60BCB8153DC32F001B69E6 /* LocationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

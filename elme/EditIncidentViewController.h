@@ -14,11 +14,7 @@
 @interface EditIncidentViewController : UIViewController<UITextViewDelegate>
 
 @property (strong, nonatomic) Incident *detailItem;
-
-@property (weak, nonatomic) IBOutlet UILabel *projectLabel;
-@property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UITextView *descriptionTextField;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)save:(id)sender;
 - (IBAction)cancel:(id)sender;
