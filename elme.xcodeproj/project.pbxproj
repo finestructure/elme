@@ -15,6 +15,7 @@
 		5A60BD3E153DCE46001B69E6 /* ImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BD3D153DCE46001B69E6 /* ImagesCell.xib */; };
 		5A60BD45153EE5E0001B69E6 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BD43153EE5E0001B69E6 /* 86-camera.png */; };
 		5A60BD46153EE5E0001B69E6 /* 86-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BD44153EE5E0001B69E6 /* 86-camera@2x.png */; };
+		5A60BD51153F04CB001B69E6 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD50153F04CB001B69E6 /* LocationViewController.m */; };
 		5A7EDC2A153431F90065CFA1 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC29153431F90065CFA1 /* Database.m */; };
 		5A7EDC2E1534580F0065CFA1 /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */; };
 		5A7EDC311534588B0065CFA1 /* CouchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */; };
@@ -71,6 +72,8 @@
 		5A60BD3D153DCE46001B69E6 /* ImagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagesCell.xib; sourceTree = "<group>"; };
 		5A60BD43153EE5E0001B69E6 /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
 		5A60BD44153EE5E0001B69E6 /* 86-camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera@2x.png"; sourceTree = "<group>"; };
+		5A60BD4F153F04CB001B69E6 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		5A60BD50153F04CB001B69E6 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		5A7EDC28153431F90065CFA1 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		5A7EDC29153431F90065CFA1 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		5A7EDC2C1534580F0065CFA1 /* IncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentViewController.h; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 				5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */,
 				5A7EDC5D153579EB0065CFA1 /* EditIncidentViewController.h */,
 				5A7EDC5E153579EB0065CFA1 /* EditIncidentViewController.m */,
+				5A60BD4F153F04CB001B69E6 /* LocationViewController.h */,
+				5A60BD50153F04CB001B69E6 /* LocationViewController.m */,
 				5AC20020152C35F300866FC5 /* MasterViewController.h */,
 				5AC20021152C35F300866FC5 /* MasterViewController.m */,
 				5AC20023152C35F300866FC5 /* DetailViewController.h */,
@@ -427,6 +432,7 @@
 				5A60BCE4153DC8D7001B69E6 /* LocationCell.m in Sources */,
 				5A60BD37153DCE04001B69E6 /* DescriptionCell.m in Sources */,
 				5A60BD3A153DCE21001B69E6 /* ImagesCell.m in Sources */,
+				5A60BD51153F04CB001B69E6 /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
