@@ -14,5 +14,6 @@
 @property (copy) NSString *desc;
 @property (copy) NSString *type;
 @property (copy) NSString *version;
+@property (retain) NSDictionary *unit;
 
 @end

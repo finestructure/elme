@@ -16,6 +16,7 @@
 @dynamic desc;
 @dynamic type;
 @dynamic version;
+@dynamic unit;
 
 - (id)initWithNewDocumentInDatabase:(CouchDatabase *)database
 {
