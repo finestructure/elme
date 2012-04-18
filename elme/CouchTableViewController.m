@@ -108,7 +108,7 @@
   NSMutableDictionary *indexMap = [[NSMutableDictionary alloc] initWithCapacity:[rows count]];
   for (int index = 0; index < [rows count]; ++index) {
     CouchQueryRow *row = [rows objectAtIndex:index];
-    [indexMap setObject:[NSIndexPath indexPathForRow:index inSection:0] forKey:[row documentID]];
+    [indexMap setObject:[NSIndexPath indexPathForRow:index inSection:0] forKey:row.key];
   }
   return indexMap;
 }
