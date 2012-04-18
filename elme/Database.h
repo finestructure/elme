@@ -10,6 +10,7 @@
 
 @class CouchDatabase;
 @class CouchDesignDocument;
+@class CouchQuery;
 @class Project;
 
 @interface Database : NSObject
@@ -21,5 +22,6 @@
 - (CouchDesignDocument *)designDocumentWithName:(NSString *)name;
 
 - (Project *)projectWithId:(NSString *)docId;
+- (CouchQuery *)units;
 
 @end

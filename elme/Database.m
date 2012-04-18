@@ -14,6 +14,7 @@
 
 #import <CouchCocoa/CouchCocoa.h>
 #import <CouchCocoa/CouchTouchDBServer.h>
+#import <CouchCocoa/CouchDesignDocument_Embedded.h>
 
 
 @interface Database () {
@@ -119,6 +120,27 @@
 {
   CouchDocument *doc = [self.database documentWithID:docId];
   return [Project modelForDocument:doc];
+}
+
+
+- (CouchQuery *)units
+{
+  CouchDesignDocument* design = [[Database sharedInstance] designDocumentWithName: @"default"];
+  [design defineViewNamed: @"units" 
+                 mapBlock: ^(NSDictionary* doc, void (^emit)(id key, id value)) {
+                   id type = [doc objectForKey: @"type"];
+                   if (type && [type isEqualToString:@"project"]) {
+                     NSArray *units = [doc objectForKey:@"units"];
+                     if (units) {
+                       for (NSDictionary *unit in units) {
+                         emit(unit, doc);
+                       }
+                     }
+                   }
+                 } 
+                  version: @"2.0"];
+  CouchQuery *query = [design queryViewNamed:@"units"];
+  return query;
 }
 
 
