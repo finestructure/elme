@@ -101,11 +101,9 @@
   lc.name = [unit valueForKey:@"name"];
   lc.address = [unit valueForKey:@"address"];
   if (unit && [unit valueForKey:@"latitude"] && [unit valueForKey:@"longitude"]) {
-    lc.coordinate =
-    CLLocationCoordinate2DMake(
-                               [[unit valueForKey:@"latitude"] doubleValue],
-                               [[unit valueForKey:@"latitude"] doubleValue]
-                               );
+    CLLocationDegrees longitude = [[unit valueForKey:@"longitude"] doubleValue];
+    CLLocationDegrees latitude = [[unit valueForKey:@"latitude"] doubleValue];
+    lc.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
   }
   
   return cell;
