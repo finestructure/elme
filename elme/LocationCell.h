@@ -11,6 +11,12 @@
 
 @interface LocationCell : UITableViewCell
 
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *address;
+@property (assign, nonatomic) CLLocationCoordinate2D coordinate;
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UITextView *addressTextView;
 
 @end

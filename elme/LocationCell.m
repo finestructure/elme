@@ -18,6 +18,33 @@
 @implementation LocationCell
 
 @synthesize mapView = _mapView;
+@synthesize nameLabel = _nameLabel;
+@synthesize addressTextView = _addressTextView;
+@synthesize name = _name;
+@synthesize address = _address;
+@synthesize coordinate = _coordinate;
+
+
+#pragma mark - Setters
+
+
+- (void)setName:(NSString *)name
+{
+  self.nameLabel.text = name;
+}
+
+
+- (void)setAddress:(NSString *)address
+{
+  self.addressTextView.text = [address stringByReplacingOccurrencesOfString:@", " withString:@"\n"];
+}
+
+
+- (void)setCoordinate:(CLLocationCoordinate2D)coordinate
+{
+  MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);    
+  [self.mapView setRegion:region animated:YES];
+}
 
 
 #pragma mark - Helpers
@@ -126,7 +153,6 @@
     CouchQueryEnumerator *rows = op.resultObject;
     CouchQueryRow *row = nil;
     while ((row = rows.nextRow) != nil) {
-      NSLog(@"row: %@", row);
       [self setPinForUnit:row];
     }
   }];
