@@ -173,6 +173,24 @@
   UITableViewCell *cell = [cells objectAtIndex:indexPath.section];
   switch (indexPath.section) {
     case 0:
+    {
+      LocationCell *lc = (LocationCell *)cell;
+      if (self.detailItem) {
+        NSDictionary *unit = self.detailItem.unit;
+        lc.name = [unit valueForKey:@"name"];
+        lc.address = [unit valueForKey:@"address"];
+        if (unit && [unit valueForKey:@"latitude"] && [unit valueForKey:@"longitude"]) {
+          lc.coordinate =
+          CLLocationCoordinate2DMake(
+                                     [[unit valueForKey:@"latitude"] doubleValue],
+                                     [[unit valueForKey:@"latitude"] doubleValue]
+          );
+        }
+      } else {
+        lc.name = @"";
+        lc.address = @"";
+      }
+    }
       break;
       
     case 1:

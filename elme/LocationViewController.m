@@ -9,6 +9,7 @@
 #import "LocationViewController.h"
 
 #import "Database.h"
+#import "LocationCell.h"
 
 #import <CouchCocoa/CouchCocoa.h>
 
@@ -92,6 +93,21 @@
 
 - (UITableViewCell *)couchTableSource:(CouchUITableSource*)source cellForRowAtIndexPath:(NSIndexPath *)indexPath; {
   UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
+  
+  CouchQueryRow *row = [self.dataSource rowAtIndex:indexPath.row];
+  NSDictionary *unit = row.key;
+
+  LocationCell *lc = (LocationCell *)cell;
+  lc.name = [unit valueForKey:@"name"];
+  lc.address = [unit valueForKey:@"address"];
+  if (unit && [unit valueForKey:@"latitude"] && [unit valueForKey:@"longitude"]) {
+    lc.coordinate =
+    CLLocationCoordinate2DMake(
+                               [[unit valueForKey:@"latitude"] doubleValue],
+                               [[unit valueForKey:@"latitude"] doubleValue]
+                               );
+  }
+  
   return cell;
 }
 
