@@ -87,7 +87,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="us5-Zt-bhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="" id="C98-km-agY" customClass="EditIncidentViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R6H-kh-11q" customClass="UIControl">
+                    <view key="view" contentMode="scaleToFill" id="R6H-kh-11q">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -133,9 +133,6 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <connections>
-                            <action selector="backgroundTapped:" destination="C98-km-agY" eventType="touchUpInside" id="as7-tt-LTx"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="FZ4-LX-Dh3"/>
                     <connections>
