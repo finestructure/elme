@@ -156,6 +156,18 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  switch (indexPath.section) {
+    case 0:
+      [self performSegueWithIdentifier:@"LocationDetail" sender:self];
+      break;
+      
+  }
+  [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+
 #pragma mark - UITableViewDataSource
 
 

@@ -95,6 +95,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="zBX-eg-e0k">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="DBP-pY-Hx2" kind="push" identifier="LocationDetail" id="k5q-gC-OLi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="C98-km-agY" id="CcW-7P-sCY"/>
                                     <outlet property="delegate" destination="C98-km-agY" id="NgN-wU-2w5"/>
@@ -130,6 +144,30 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1040" y="-311"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6Nq-w1-to9">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VbF-K6-uhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="DBP-pY-Hx2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kw6-rT-8wE">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Von-KP-7XQ">
+                                <rect key="frame" x="127" y="116" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eqo-5L-t5m"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1488" y="-311"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="emB-cy-WDw">
