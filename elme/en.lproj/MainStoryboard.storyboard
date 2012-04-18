@@ -59,8 +59,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="FHW-Ah-rfl" id="Bej-jz-zrZ"/>
-                                    <outlet property="delegate" destination="FHW-Ah-rfl" id="Noj-83-8Ey"/>
+                                    <outlet property="delegate" destination="FHW-Ah-rfl" id="KWO-BI-cHm"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Vorfälle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="PmZ-Aq-aK2">
@@ -155,11 +154,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DBP-pY-Hx2" id="CXn-Cd-WZP"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="eqo-5L-t5m"/>
+                    <connections>
+                        <outlet property="tableView" destination="L1L-qv-Ly4" id="Ecp-dF-4tL"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1488" y="-311"/>
