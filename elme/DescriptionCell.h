@@ -10,4 +10,6 @@
 
 @interface DescriptionCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
 @end
