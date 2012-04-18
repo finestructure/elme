@@ -31,20 +31,21 @@
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUITableViewCell" id="1067985882">
+			<object class="IBUITableViewCell" id="403405378">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIView" id="139105349">
-						<reference key="NSNextResponder" ref="1067985882"/>
+					<object class="IBUIView" id="321241854">
+						<reference key="NSNextResponder" ref="403405378"/>
 						<int key="NSvFlags">256</int>
 						<array class="NSMutableArray" key="NSSubviews">
-							<object class="IBUITextView" id="235284070">
-								<reference key="NSNextResponder" ref="139105349"/>
+							<object class="IBUITextView" id="814859196">
+								<reference key="NSNextResponder" ref="321241854"/>
 								<int key="NSvFlags">274</int>
 								<string key="NSFrame">{{8, 8}, {304, 81}}</string>
-								<reference key="NSSuperview" ref="139105349"/>
+								<reference key="NSSuperview" ref="321241854"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -52,6 +53,7 @@
 								<string key="IBUIText">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIAutocapitalizationType">2</int>
+									<int key="IBUIReturnKeyType">9</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
@@ -66,9 +68,9 @@
 							</object>
 						</array>
 						<string key="NSFrameSize">{320, 103}</string>
-						<reference key="NSSuperview" ref="1067985882"/>
+						<reference key="NSSuperview" ref="403405378"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="235284070"/>
+						<reference key="NSNextKeyView" ref="814859196"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -84,10 +86,10 @@
 				<string key="NSFrameSize">{320, 104}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="139105349"/>
+				<reference key="NSNextKeyView" ref="321241854"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-				<reference key="IBUIContentView" ref="139105349"/>
+				<reference key="IBUIContentView" ref="321241854"/>
 				<real value="104" key="IBUIRowHeight"/>
 			</object>
 		</array>
@@ -96,16 +98,16 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">textView</string>
-						<reference key="source" ref="1067985882"/>
-						<reference key="destination" ref="235284070"/>
+						<reference key="source" ref="403405378"/>
+						<reference key="destination" ref="814859196"/>
 					</object>
 					<int key="connectionID">6</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
-						<reference key="source" ref="235284070"/>
-						<reference key="destination" ref="1067985882"/>
+						<reference key="source" ref="814859196"/>
+						<reference key="destination" ref="403405378"/>
 					</object>
 					<int key="connectionID">7</int>
 				</object>
@@ -131,16 +133,16 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">2</int>
-						<reference key="object" ref="1067985882"/>
+						<reference key="object" ref="403405378"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="235284070"/>
+							<reference ref="814859196"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
-						<reference key="object" ref="235284070"/>
-						<reference key="parent" ref="1067985882"/>
+						<reference key="object" ref="814859196"/>
+						<reference key="parent" ref="403405378"/>
 					</object>
 				</array>
 			</object>
