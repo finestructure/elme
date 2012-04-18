@@ -86,7 +86,7 @@
         <scene sceneID="Aen-bP-uRq">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="us5-Zt-bhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="C98-km-agY" customClass="EditIncidentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" id="C98-km-agY" customClass="EditIncidentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R6H-kh-11q" customClass="UIControl">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,26 +131,11 @@
             </objects>
             <point key="canvasLocation" x="1040" y="-311"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="a3i-tM-i58">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NUQ-QL-rWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Tzy-Cr-jbH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3Pf-nM-c6Y">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Lah-CG-4Va"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1835" y="639"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="emB-cy-WDw">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhY-dL-vSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="uLm-35-stE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="" definesPresentationContext="YES" id="uLm-35-stE" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="5eB-zl-veK">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
