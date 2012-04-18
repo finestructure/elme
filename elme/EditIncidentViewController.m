@@ -189,6 +189,8 @@
       } else {
         lc.name = @"";
         lc.address = @"";
+        lc.zoomToAnnotations = YES;
+        [lc showUnits];
       }
     }
       break;

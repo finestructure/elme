@@ -23,6 +23,7 @@
 @synthesize name = _name;
 @synthesize address = _address;
 @synthesize coordinate = _coordinate;
+@synthesize zoomToAnnotations = _zoomToAnnotations;
 
 
 #pragma mark - Setters
@@ -73,7 +74,9 @@
   ann.subtitle = subtitle;
   ann.coordinate = coordinate;
   [self.mapView addAnnotation:ann];
-  [self zoomMapToAnnotationRegion];
+  if (self.zoomToAnnotations) {
+    [self zoomMapToAnnotationRegion];
+  }
 }
 
 
@@ -180,10 +183,11 @@
 {
   self = [super initWithCoder:decoder];
   if (self != nil) {
-    [self.mapView.userLocation addObserver:self  
-                                forKeyPath:@"location"  
-                                   options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)  
-                                   context:NULL];
+    self.zoomToAnnotations = NO;
+//    [self.mapView.userLocation addObserver:self  
+//                                forKeyPath:@"location"  
+//                                   options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)  
+//                                   context:NULL];
     [self showUnits];
   }
   return self;

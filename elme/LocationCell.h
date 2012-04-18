@@ -14,9 +14,12 @@
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *address;
 @property (assign, nonatomic) CLLocationCoordinate2D coordinate;
+@property (assign, nonatomic) BOOL zoomToAnnotations;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *addressTextView;
+
+- (void)showUnits;
 
 @end
