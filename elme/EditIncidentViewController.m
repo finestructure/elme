@@ -101,11 +101,17 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
+  
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 
@@ -199,6 +205,27 @@
       return @"";
       break;
   }
+}
+
+
+#pragma mark - Keyboard handlers
+
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+  CGRect frame = self.view.frame;
+  frame.origin.y -= 100;
+  [UIView animateWithDuration:0.2 animations:^{
+    self.view.frame = frame;
+  }];
+}
+
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+  CGRect frame = self.view.frame;
+  frame.origin.y += 100;
+  [UIView animateWithDuration:0.2 animations:^{
+    self.view.frame = frame;
+  }];
 }
 
 
