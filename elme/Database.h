@@ -23,5 +23,6 @@
 
 - (Project *)projectWithId:(NSString *)docId;
 - (CouchQuery *)units;
+- (CouchQuery *)incidents;
 
 @end

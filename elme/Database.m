@@ -125,7 +125,7 @@
 
 - (CouchQuery *)units
 {
-  CouchDesignDocument* design = [[Database sharedInstance] designDocumentWithName: @"default"];
+  CouchDesignDocument* design = [self designDocumentWithName: @"default"];
   [design defineViewNamed: @"units" 
                  mapBlock: ^(NSDictionary* doc, void (^emit)(id key, id value)) {
                    id type = [doc objectForKey: @"type"];
@@ -140,6 +140,39 @@
                  } 
                   version: @"2.0"];
   CouchQuery *query = [design queryViewNamed:@"units"];
+  return query;
+}
+
+
+- (CouchQuery *)incidents
+{
+  CouchDesignDocument* design = [self designDocumentWithName: @"default"];
+  [design defineViewNamed: @"incidents" 
+                 mapBlock: ^(NSDictionary* doc, void (^emit)(id key, id value)) {
+                   id type = [doc objectForKey: @"type"];
+                   if (type && [type isEqualToString:@"incident"]) {
+                     id date = [doc objectForKey: @"created_at"];
+                     if (date) {
+                       id _id = [doc objectForKey:@"_id"];
+                       emit([NSArray arrayWithObjects:date, _id, nil], doc);
+                     }
+                   }
+                 } 
+                  version: @"1.0"];
+  
+  // and a validation function requiring parseable dates
+  design.validationBlock = ^BOOL(TDRevision* newRevision, id<TDValidationContext> context) {
+    if (newRevision.deleted)
+      return YES;
+    id date = [newRevision.properties objectForKey: @"created_at"];
+    if (date && ! [RESTBody dateWithJSONObject:date]) {
+      context.errorMessage = [@"invalid date " stringByAppendingString:date];
+      return NO;
+    }
+    return YES;
+  };
+  
+  CouchQuery* query = [design queryViewNamed: @"incidents"];
   return query;
 }
 
