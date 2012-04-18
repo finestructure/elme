@@ -10,6 +10,7 @@
 
 @class CouchDatabase;
 @class CouchDesignDocument;
+@class Project;
 
 @interface Database : NSObject
 
@@ -18,5 +19,7 @@
 + (Database *)sharedInstance;
 - (BOOL)connect:(NSError **)outError;
 - (CouchDesignDocument *)designDocumentWithName:(NSString *)name;
+
+- (Project *)projectWithId:(NSString *)docId;
 
 @end

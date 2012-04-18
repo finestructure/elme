@@ -10,6 +10,7 @@
 
 #import "Configuration.h"
 #import "Globals.h"
+#import "Project.h"
 
 #import <CouchCocoa/CouchCocoa.h>
 #import <CouchCocoa/CouchTouchDBServer.h>
@@ -108,6 +109,16 @@
   _pull = nil;
   [_push stop];
   _push = nil;
+}
+
+
+#pragma mark - Fetch methods
+
+
+- (Project *)projectWithId:(NSString *)docId
+{
+  CouchDocument *doc = [self.database documentWithID:docId];
+  return [Project modelForDocument:doc];
 }
 
 
