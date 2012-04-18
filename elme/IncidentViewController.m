@@ -13,7 +13,6 @@
 #import "Incident.h"
 
 #import <CouchCocoa/CouchCocoa.h>
-#import <CouchCocoa/CouchDesignDocument_Embedded.h>
 
 
 @interface IncidentViewController ()
@@ -24,7 +23,7 @@
 @implementation IncidentViewController
 
 
-#pragma mark - Helpers
+#pragma mark - CouchTableViewController methods
 
 
 - (void)setupDataSource {
@@ -38,6 +37,9 @@
   self.dataSource.tableView = self.tableView;
   self.tableView.dataSource = self.dataSource;
 }
+
+
+#pragma mark - Helpers
 
 
 - (Incident *)incidentForIndexPath:(NSIndexPath *)indexPath {
