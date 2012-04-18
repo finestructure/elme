@@ -212,20 +212,6 @@
 }
 
 
-#pragma mark - UITextViewDelegate
-
-
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-  if( [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location == NSNotFound ) {
-    return YES;
-  }
-  
-//  [self.descriptionTextField resignFirstResponder];
-  return NO;
-}
-
-
 #pragma mark - Keyboard handlers
 
 

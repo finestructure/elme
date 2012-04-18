@@ -10,7 +10,7 @@
 
 @class Incident;
 
-@interface EditIncidentViewController : UIViewController<UITextViewDelegate>
+@interface EditIncidentViewController : UIViewController
 
 @property (strong, nonatomic) Incident *detailItem;
 
