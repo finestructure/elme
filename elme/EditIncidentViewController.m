@@ -10,6 +10,7 @@
 
 #import "Annotation.h"
 #import "Database.h"
+#import "DescriptionCell.h"
 #import "Incident.h"
 #import "LocationCell.h"
 
@@ -170,6 +171,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   UITableViewCell *cell = [cells objectAtIndex:indexPath.section];
+  switch (indexPath.section) {
+    case 0:
+      break;
+      
+    case 1:
+      ((DescriptionCell *)cell).textView.text = self.detailItem ? self.detailItem.desc : @"";
+      break;
+  }
   return cell;
 }
 
