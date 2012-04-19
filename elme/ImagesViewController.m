@@ -19,12 +19,20 @@
 @implementation ImagesViewController
 
 @synthesize imagePreview = _imagePreview;
+@synthesize scrollView = _scrollView;
 
 
 #pragma mark - Actions
 
 
 - (IBAction)takeImage:(id)sender {
+  AVCaptureConnection *connection = [imageOutput connectionWithMediaType:AVMediaTypeVideo];
+  [imageOutput captureStillImageAsynchronouslyFromConnection:connection completionHandler:^(CMSampleBufferRef sampleBuffer, NSError *error) {
+    UIImage *image = [self convertSampleBufferToUIImage:sampleBuffer];
+
+    UIImageView *iv = [[UIImageView alloc] initWithImage:image];
+    [self.scrollView addSubview:iv];
+  }];
 }
 
 - (IBAction)deleteImage:(id)sender {
@@ -32,6 +40,80 @@
 
 
 #pragma mark - Helpers
+
+
+- (UIImage *)convertSampleBufferToUIImage:(CMSampleBufferRef)sampleBuffer {
+  UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
+  image = [UIImage imageWithCGImage:image.CGImage scale:2 orientation:UIImageOrientationRight];
+  CGSize previewSize = self.imagePreview.frame.size;
+  
+  CGFloat scale = image.size.width/previewSize.width;
+  CGRect cropRect = CGRectMake(0,
+                               image.size.height/2 - previewSize.height/2*scale,
+                               image.size.width,
+                               previewSize.height*scale);
+  image = [self cropImage:image toFrame:cropRect];
+  NSLog(@"image size: %.0f x %.0f", image.size.width, image.size.height);
+  return image;
+}
+
+
+- (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef)sampleBuffer {
+  
+  CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+  // Lock the base address of the pixel buffer.
+  CVPixelBufferLockBaseAddress(imageBuffer,0);
+  
+  // Get the number of bytes per row for the pixel buffer.
+  size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+  // Get the pixel buffer width and height.
+  size_t width = CVPixelBufferGetWidth(imageBuffer);
+  size_t height = CVPixelBufferGetHeight(imageBuffer);
+  
+  // Create a device-dependent RGB color space.
+  static CGColorSpaceRef colorSpace = NULL;
+  if (colorSpace == NULL) {
+    colorSpace = CGColorSpaceCreateDeviceRGB();
+    if (colorSpace == NULL) {
+      // Handle the error appropriately.
+      return nil;
+    }
+  }
+  
+  // Get the base address of the pixel buffer.
+  void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
+  // Get the data size for contiguous planes of the pixel buffer.
+  size_t bufferSize = CVPixelBufferGetDataSize(imageBuffer);
+  
+  // Create a Quartz direct-access data provider that uses data we supply.
+  CGDataProviderRef dataProvider =
+  CGDataProviderCreateWithData(NULL, baseAddress, bufferSize, NULL);
+  // Create a bitmap image from data supplied by the data provider.
+  CGImageRef cgImage =
+  CGImageCreate(width, height, 8, 32, bytesPerRow,
+                colorSpace, kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Little,
+                dataProvider, NULL, true, kCGRenderingIntentDefault);
+  CGDataProviderRelease(dataProvider);
+  
+  // Create and return an image object to represent the Quartz image.
+  UIImage *image = [UIImage imageWithCGImage:cgImage];
+  CGImageRelease(cgImage);
+  
+  CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+  
+  return image;
+}
+
+
+- (UIImage *)cropImage:(UIImage *)image toFrame:(CGRect)rect {
+  UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.);
+  [image drawAtPoint:CGPointMake(-rect.origin.x, -rect.origin.y)
+           blendMode:kCGBlendModeCopy
+               alpha:1.];
+  UIImage *croppedImage = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  return croppedImage;
+}
 
 
 - (void)createSession {
@@ -95,6 +177,7 @@
 - (void)viewDidUnload
 {
   [self setImagePreview:nil];
+  [self setScrollView:nil];
   [super viewDidUnload];
   // Release any retained subviews of the main view.
 }

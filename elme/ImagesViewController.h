@@ -13,6 +13,7 @@
 @interface ImagesViewController : UIViewController<AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)takeImage:(id)sender;
 - (IBAction)deleteImage:(id)sender;
