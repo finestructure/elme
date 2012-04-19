@@ -75,7 +75,6 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [self configureView];
   
   cells = [NSMutableArray array];
   NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LocationCell" owner:self options:nil];
@@ -84,6 +83,8 @@
   [cells addObject:[nib objectAtIndex:0]];
   nib = [[NSBundle mainBundle] loadNibNamed:@"ImagesCell" owner:self options:nil];
   [cells addObject:[nib objectAtIndex:0]];
+
+  [self configureView];
 }
 
 
@@ -151,8 +152,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  UITableViewCell *cell = [cells objectAtIndex:indexPath.section];
-  return cell.frame.size.height;
+  // work-around for growing row height -- keep around initial values
+  static NSMutableArray *heights = nil;
+  if (heights == nil) {
+    heights = [NSMutableArray array];
+    for (UITableViewCell *cell in cells) {
+      [heights addObject:[NSNumber numberWithDouble:cell.bounds.size.height]];
+    }
+  }
+  return [[heights objectAtIndex:indexPath.section] doubleValue];
 }
 
 
