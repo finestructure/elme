@@ -10,7 +10,7 @@
 
 @class Incident;
 
-@interface EditIncidentViewController : UIViewController
+@interface EditIncidentViewController : UIViewController<UIActionSheetDelegate>
 
 @property (strong, nonatomic) Incident *detailItem;
 @property (assign) BOOL isNewItem;

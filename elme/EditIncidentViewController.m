@@ -161,7 +161,32 @@
 }
 
 - (IBAction)deleteItem:(id)sender {
-  
+  NSString *title = NSLocalizedString(@"Diesen Vorfall löschen?", 
+                                      @"Delete incident action sheet title");
+  NSString *cancelButtonTitle = NSLocalizedString(@"Abbrechen",
+                                                  @"Cancel button title");
+  NSString *destructiveButtonTitle = NSLocalizedString(@"Vorfall löschen",
+                                                       @"Delete incident button title");
+  UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:cancelButtonTitle destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:nil];
+  [sheet showFromToolbar:self.toolBar];
+}
+
+
+#pragma mark - UIActionSheetDelegate
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+  if (buttonIndex == actionSheet.destructiveButtonIndex) {
+    RESTOperation *op = [self.detailItem deleteDocument];
+    [op onCompletion: ^{
+      if (op.error) {
+        [self failedWithError:op.error];
+      }
+    }];
+    [op start];
+    [self.navigationController popViewControllerAnimated:YES];
+  }
 }
 
 
