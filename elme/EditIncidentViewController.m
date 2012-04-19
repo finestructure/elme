@@ -188,6 +188,9 @@
                                      [[unit valueForKey:@"latitude"] doubleValue],
                                      [[unit valueForKey:@"latitude"] doubleValue]
           );
+        } else {
+          lc.zoomToAnnotations = YES;
+          [lc showUnits];
         }
       } else {
         lc.name = @"";
