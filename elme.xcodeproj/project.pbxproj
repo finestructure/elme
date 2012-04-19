@@ -16,6 +16,11 @@
 		5A60BD45153EE5E0001B69E6 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BD43153EE5E0001B69E6 /* 86-camera.png */; };
 		5A60BD46153EE5E0001B69E6 /* 86-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BD44153EE5E0001B69E6 /* 86-camera@2x.png */; };
 		5A60BD51153F04CB001B69E6 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD50153F04CB001B69E6 /* LocationViewController.m */; };
+		5A60BD57153FFCD5001B69E6 /* Incident.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC5B153489910065CFA1 /* Incident.m */; };
+		5A60BD58153FFD05001B69E6 /* CouchCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2008A152C672E00866FC5 /* CouchCocoa.framework */; };
+		5A60BD59153FFD05001B69E6 /* TouchDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2008B152C672E00866FC5 /* TouchDB.framework */; };
+		5A60BD5A153FFD18001B69E6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200B8152C764B00866FC5 /* libsqlite3.dylib */; };
+		5A60BD5B153FFD1F001B69E6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200B6152C764200866FC5 /* libz.dylib */; };
 		5A7EDC2A153431F90065CFA1 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC29153431F90065CFA1 /* Database.m */; };
 		5A7EDC2E1534580F0065CFA1 /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */; };
 		5A7EDC311534588B0065CFA1 /* CouchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */; };
@@ -34,7 +39,7 @@
 		5AC2002E152C35F300866FC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000B152C35F300866FC5 /* UIKit.framework */; };
 		5AC2002F152C35F300866FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000D152C35F300866FC5 /* Foundation.framework */; };
 		5AC20037152C35F300866FC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AC20035152C35F300866FC5 /* InfoPlist.strings */; };
-		5AC2003A152C35F300866FC5 /* elmeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20039152C35F300866FC5 /* elmeTests.m */; };
+		5AC2003A152C35F300866FC5 /* DatabaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20039152C35F300866FC5 /* DatabaseTests.m */; };
 		5AC2004D152C4C1F00866FC5 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2004B152C4C1F00866FC5 /* icon-57.png */; };
 		5AC2004E152C4C1F00866FC5 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2004C152C4C1F00866FC5 /* icon-114.png */; };
 		5AC2007B152C64E000866FC5 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20078152C64E000866FC5 /* Configuration.m */; };
@@ -103,8 +108,7 @@
 		5AC2002C152C35F300866FC5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		5AC20034152C35F300866FC5 /* elmeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "elmeTests-Info.plist"; sourceTree = "<group>"; };
 		5AC20036152C35F300866FC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5AC20038152C35F300866FC5 /* elmeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = elmeTests.h; sourceTree = "<group>"; };
-		5AC20039152C35F300866FC5 /* elmeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = elmeTests.m; sourceTree = "<group>"; };
+		5AC20039152C35F300866FC5 /* DatabaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatabaseTests.m; sourceTree = "<group>"; };
 		5AC2004B152C4C1F00866FC5 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = SOURCE_ROOT; };
 		5AC2004C152C4C1F00866FC5 /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = SOURCE_ROOT; };
 		5AC20077152C64E000866FC5 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
@@ -147,6 +151,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A60BD5B153FFD1F001B69E6 /* libz.dylib in Frameworks */,
+				5A60BD5A153FFD18001B69E6 /* libsqlite3.dylib in Frameworks */,
+				5A60BD58153FFD05001B69E6 /* CouchCocoa.framework in Frameworks */,
+				5A60BD59153FFD05001B69E6 /* TouchDB.framework in Frameworks */,
 				5AC2002D152C35F300866FC5 /* SenTestingKit.framework in Frameworks */,
 				5AC2002E152C35F300866FC5 /* UIKit.framework in Frameworks */,
 				5AC2002F152C35F300866FC5 /* Foundation.framework in Frameworks */,
@@ -243,8 +251,7 @@
 		5AC20032152C35F300866FC5 /* elmeTests */ = {
 			isa = PBXGroup;
 			children = (
-				5AC20038152C35F300866FC5 /* elmeTests.h */,
-				5AC20039152C35F300866FC5 /* elmeTests.m */,
+				5AC20039152C35F300866FC5 /* DatabaseTests.m */,
 				5AC20033152C35F300866FC5 /* Supporting Files */,
 			);
 			path = elmeTests;
@@ -440,7 +447,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AC2003A152C35F300866FC5 /* elmeTests.m in Sources */,
+				5A60BD57153FFCD5001B69E6 /* Incident.m in Sources */,
+				5AC2003A152C35F300866FC5 /* DatabaseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +584,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
@@ -593,6 +602,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
