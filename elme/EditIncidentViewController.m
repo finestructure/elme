@@ -25,7 +25,9 @@
 @implementation EditIncidentViewController
 
 @synthesize detailItem = _detailItem;
+@synthesize isNewItem = _isNewItem;
 @synthesize tableView = _tableView;
+@synthesize toolBar = _toolBar;
 
 
 #pragma mark - Helpers
@@ -77,6 +79,19 @@
 {
   [super viewDidLoad];
   
+  NSMutableArray *buttons = [NSMutableArray array];
+  if (self.isNewItem) {
+    [buttons addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)]];
+    [buttons addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]];
+    [buttons addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)]];
+  } else {
+    [buttons addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteItem:)]];
+  }
+  for (UIBarButtonItem *button in buttons) {
+    button.style = UIBarButtonItemStyleBordered;
+  }
+  [self.toolBar setItems:buttons animated:NO];
+  
   cells = [NSMutableArray array];
   NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LocationCell" owner:self options:nil];
   [cells addObject:[nib objectAtIndex:0]];
@@ -93,6 +108,7 @@
 {
   [self setTableView:nil];
   cells = nil;
+  [self setToolBar:nil];
   [super viewDidUnload];
 }
 
@@ -142,6 +158,10 @@
 
 - (IBAction)cancel:(id)sender {
   [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)deleteItem:(id)sender {
+  
 }
 
 

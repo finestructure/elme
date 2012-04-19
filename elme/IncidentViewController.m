@@ -123,12 +123,14 @@
     UINavigationController *nc = [segue destinationViewController];
     EditIncidentViewController *evc = (EditIncidentViewController *)nc.topViewController;
     evc.detailItem = [[Incident alloc] initWithNewDocumentInDatabase:[Database sharedInstance].database];
+    evc.isNewItem = YES;
   } else if ([[segue identifier] isEqualToString:@"EditIncident"]) {
     NSIndexPath *selectedRow = self.tableView.indexPathForSelectedRow;
     CouchQueryRow *row = [self.dataSource rowAtIndex:selectedRow.row];
 
     EditIncidentViewController *evc = (EditIncidentViewController *)segue.destinationViewController;
     evc.detailItem = [Incident modelForDocument:row.document];
+    evc.isNewItem = NO;
     [self.tableView deselectRowAtIndexPath:selectedRow animated:YES];
   }
 }

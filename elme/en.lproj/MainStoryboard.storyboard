@@ -140,19 +140,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wnV-2K-KLj">
                                 <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem systemItem="cancel" id="h0o-nz-pLs">
-                                        <connections>
-                                            <action selector="cancel:" destination="C98-km-agY" id="pRm-F5-jJa"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IWB-wP-5H5"/>
-                                    <barButtonItem systemItem="save" id="AwW-Rk-plL">
-                                        <connections>
-                                            <action selector="save:" destination="C98-km-agY" id="qOv-Wk-9gd"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
+                                <items/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -160,6 +148,7 @@
                     <navigationItem key="navigationItem" id="FZ4-LX-Dh3"/>
                     <connections>
                         <outlet property="tableView" destination="XWk-2c-56c" id="nX7-4b-W53"/>
+                        <outlet property="toolBar" destination="wnV-2K-KLj" id="TDk-Uv-Vnz"/>
                     </connections>
                 </viewController>
             </objects>
@@ -268,8 +257,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditIncidentViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="deleteItem:"/>
                 <relationship kind="action" name="save:"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
         <class className="ImagesViewController" superclassName="UIViewController">
