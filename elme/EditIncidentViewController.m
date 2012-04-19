@@ -194,7 +194,7 @@
           lc.coordinate =
           CLLocationCoordinate2DMake(
                                      [[unit valueForKey:@"latitude"] doubleValue],
-                                     [[unit valueForKey:@"latitude"] doubleValue]
+                                     [[unit valueForKey:@"longitude"] doubleValue]
           );
         } else {
           lc.zoomToAnnotations = YES;
