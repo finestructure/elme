@@ -11,6 +11,7 @@
 #import "Annotation.h"
 #import "Database.h"
 #import "DescriptionCell.h"
+#import "ImagesViewController.h"
 #import "Incident.h"
 #import "LocationCell.h"
 
@@ -250,6 +251,18 @@
     default:
       return @"";
       break;
+  }
+}
+
+
+#pragma mark - Segue
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([[segue identifier] isEqualToString:@"ImagesDetail"]) {
+    ImagesViewController *vc = [segue destinationViewController];
+    vc.detailItem = self.detailItem;
   }
 }
 

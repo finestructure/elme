@@ -8,6 +8,9 @@
 
 #import "ImagesViewController.h"
 
+#import "Incident.h"
+
+
 @interface ImagesViewController () {
   AVCaptureSession *session;
   AVCaptureStillImageOutput *imageOutput;
@@ -18,9 +21,28 @@
 
 @implementation ImagesViewController
 
-@synthesize images = _images;
+@synthesize detailItem = _detailItem;
 @synthesize imagePreview = _imagePreview;
 @synthesize scrollView = _scrollView;
+
+
+#pragma mark - Managing the detail item
+
+
+- (void)setDetailItem:(id)newDetailItem
+{
+  if (_detailItem != newDetailItem) {
+    _detailItem = newDetailItem;
+    
+    [self configureView];
+  }
+}
+
+
+- (void)configureView
+{
+  [self showImages];
+}
 
 
 #pragma mark - Actions
@@ -31,7 +53,7 @@
   [imageOutput captureStillImageAsynchronouslyFromConnection:connection completionHandler:^(CMSampleBufferRef sampleBuffer, NSError *error) {
     UIImage *image = [self convertSampleBufferToUIImage:sampleBuffer];
     if (image != nil) {
-      [self.images addObject:image];
+      [self.detailItem addImage:image];
       [self showImages];
     }
   }];
@@ -139,6 +161,8 @@
 
 
 - (void)showImages {
+  NSArray *images = self.detailItem.images;
+  
   // grid configuration
   CGFloat aspectRatio = 4./3.;
   CGFloat sepWidth = 4;
@@ -151,8 +175,8 @@
   int colWidth = imageWidth + sepWidth;
   int rowHeight = imageHeight + sepWidth;
   
-  for (int i = 0; i < self.images.count; ++i) {
-    UIImage *image = [self.images objectAtIndex:i];
+  for (int i = 0; i < images.count; ++i) {
+    UIImage *image = [images objectAtIndex:i];
     UIImageView *view = [[UIImageView alloc] initWithImage:image];
 //    view.userInteractionEnabled = YES;
 //    [view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)]];
@@ -162,7 +186,7 @@
     view.frame = CGRectMake(col*colWidth, row*rowHeight, imageWidth, imageHeight);
     [self.scrollView addSubview:view];
   }
-  int nRows = ceil(self.images.count / (float)imagesPerRow);
+  int nRows = ceil(images.count / (float)imagesPerRow);
   CGSize contentSize = CGSizeMake(totalWidth,
                                   nRows * rowHeight - sepWidth); // rowHeight includes sepWidth, remove extra one
   self.scrollView.contentSize = contentSize;
@@ -185,8 +209,6 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-
-  self.images = [NSMutableArray array];
   
   // session init
   [self createSession];
@@ -216,7 +238,6 @@
   [self setImagePreview:nil];
   [self setScrollView:nil];
   session = nil;
-  self.images = nil;
   [super viewDidUnload];
   // Release any retained subviews of the main view.
 }

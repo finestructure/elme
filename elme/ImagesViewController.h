@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+@class Incident;
 
 @interface ImagesViewController : UIViewController<AVCaptureVideoDataOutputSampleBufferDelegate>
 
-@property (strong, nonatomic) NSMutableArray *images;
+@property (strong, nonatomic) Incident *detailItem;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
