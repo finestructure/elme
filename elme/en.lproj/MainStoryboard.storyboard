@@ -48,14 +48,17 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IncidentCell" id="heK-8b-kkL">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IncidentCell" id="heK-8b-kkL">
                                         <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="C98-km-agY" kind="push" identifier="EditIncident" id="vjR-4j-wD0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -242,6 +245,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhY-dL-vSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="" definesPresentationContext="YES" id="uLm-35-stE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qTq-9r-Oqq"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="5eB-zl-veK">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -250,7 +254,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="572" y="-311"/>
+            <point key="canvasLocation" x="574" y="-216"/>
         </scene>
     </scenes>
     <classes>
@@ -292,4 +296,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="vjR-4j-wD0"/>
+    </inferredMetricsTieBreakers>
 </document>
