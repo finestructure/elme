@@ -178,6 +178,7 @@
 {
   [self setImagePreview:nil];
   [self setScrollView:nil];
+  session = nil;
   [super viewDidUnload];
   // Release any retained subviews of the main view.
 }
