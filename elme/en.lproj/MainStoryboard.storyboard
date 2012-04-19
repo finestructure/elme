@@ -96,7 +96,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Unused" id="zBX-eg-e0k">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -105,6 +105,27 @@
                                         </view>
                                         <connections>
                                             <segue destination="DBP-pY-Hx2" kind="push" identifier="LocationDetail" id="k5q-gC-OLi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Unused" id="9p3-Xt-YxO">
+                                        <rect key="frame" x="0.0" y="91" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Unused" id="Ij8-DD-fFI">
+                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="pKk-fm-Dyb" kind="push" identifier="ImagesDetail" id="ABm-h3-L0T"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -169,6 +190,21 @@
             </objects>
             <point key="canvasLocation" x="1488" y="-311"/>
         </scene>
+        <!--Images View Controller-->
+        <scene sceneID="WwF-dB-sDc">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dz8-mg-dxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="pKk-fm-Dyb" customClass="ImagesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="huE-rc-skE">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XHg-1z-FVq"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1556" y="-27"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="emB-cy-WDw">
             <objects>
@@ -199,6 +235,9 @@
                 <relationship kind="action" name="save:"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="ImagesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImagesViewController.h"/>
         </class>
         <class className="IncidentViewController" superclassName="CouchTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IncidentViewController.h"/>
