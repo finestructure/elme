@@ -9,6 +9,8 @@
 #import "LocationViewController.h"
 
 #import "Database.h"
+#import "EditIncidentViewController.h"
+#import "Incident.h"
 #import "LocationCell.h"
 
 #import <CouchCocoa/CouchCocoa.h>
@@ -83,6 +85,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  CouchQueryRow *row = [self.dataSource rowAtIndex:indexPath.row];
+  NSDictionary *unit = row.key;
+  
+  EditIncidentViewController *evc = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
+  evc.detailItem.unit = unit;
+
   [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
   [self.navigationController popViewControllerAnimated:YES];
 }
