@@ -12,6 +12,8 @@
 
 @interface ImagesViewController : UIViewController<AVCaptureVideoDataOutputSampleBufferDelegate>
 
+@property (strong, nonatomic) NSMutableArray *images;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 

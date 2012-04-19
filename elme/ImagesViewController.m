@@ -18,6 +18,7 @@
 
 @implementation ImagesViewController
 
+@synthesize images = _images;
 @synthesize imagePreview = _imagePreview;
 @synthesize scrollView = _scrollView;
 
@@ -29,9 +30,10 @@
   AVCaptureConnection *connection = [imageOutput connectionWithMediaType:AVMediaTypeVideo];
   [imageOutput captureStillImageAsynchronouslyFromConnection:connection completionHandler:^(CMSampleBufferRef sampleBuffer, NSError *error) {
     UIImage *image = [self convertSampleBufferToUIImage:sampleBuffer];
-
-    UIImageView *iv = [[UIImageView alloc] initWithImage:image];
-    [self.scrollView addSubview:iv];
+    if (image != nil) {
+      [self.images addObject:image];
+      [self showImages];
+    }
   }];
 }
 
@@ -136,6 +138,38 @@
 }
 
 
+- (void)showImages {
+  // grid configuration
+  CGFloat aspectRatio = 4./3.;
+  CGFloat sepWidth = 4;
+  int imagesPerRow = 4;
+
+  int totalWidth = self.scrollView.frame.size.width;
+  
+  int imageWidth = (totalWidth - ((imagesPerRow -1) * sepWidth)) / imagesPerRow;
+  int imageHeight = round(imageWidth/aspectRatio);
+  int colWidth = imageWidth + sepWidth;
+  int rowHeight = imageHeight + sepWidth;
+  
+  for (int i = 0; i < self.images.count; ++i) {
+    UIImage *image = [self.images objectAtIndex:i];
+    UIImageView *view = [[UIImageView alloc] initWithImage:image];
+//    view.userInteractionEnabled = YES;
+//    [view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)]];
+    
+    int col = i % imagesPerRow;
+    int row = i / imagesPerRow;
+    view.frame = CGRectMake(col*colWidth, row*rowHeight, imageWidth, imageHeight);
+    [self.scrollView addSubview:view];
+  }
+  int nRows = ceil(self.images.count / (float)imagesPerRow);
+  CGSize contentSize = CGSizeMake(totalWidth,
+                                  nRows * rowHeight - sepWidth); // rowHeight includes sepWidth, remove extra one
+  self.scrollView.contentSize = contentSize;
+  NSLog(@"content size: %f %f", contentSize.width, contentSize.height);
+}
+
+
 #pragma mark - Init and view lifecycle
 
 
@@ -153,6 +187,8 @@
 {
   [super viewDidLoad];
 
+  self.images = [NSMutableArray array];
+  
   // session init
   [self createSession];
   
@@ -171,6 +207,8 @@
   
   // start AV session
   [session startRunning];
+  
+  [self showImages];
 }
 
 
@@ -179,6 +217,7 @@
   [self setImagePreview:nil];
   [self setScrollView:nil];
   session = nil;
+  self.images = nil;
   [super viewDidUnload];
   // Release any retained subviews of the main view.
 }
