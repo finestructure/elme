@@ -22,6 +22,8 @@
 		5A60BD5A153FFD18001B69E6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200B8152C764B00866FC5 /* libsqlite3.dylib */; };
 		5A60BD5B153FFD1F001B69E6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200B6152C764200866FC5 /* libz.dylib */; };
 		5A60BD63154031F1001B69E6 /* ImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD62154031F0001B69E6 /* ImagesViewController.m */; };
+		5A60BD8D154037D5001B69E6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A60BD8C154037D5001B69E6 /* AVFoundation.framework */; };
+		5A60BD8F15403802001B69E6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A60BD8E15403802001B69E6 /* CoreVideo.framework */; };
 		5A7EDC2A153431F90065CFA1 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC29153431F90065CFA1 /* Database.m */; };
 		5A7EDC2E1534580F0065CFA1 /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */; };
 		5A7EDC311534588B0065CFA1 /* CouchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */; };
@@ -82,6 +84,8 @@
 		5A60BD50153F04CB001B69E6 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		5A60BD61154031F0001B69E6 /* ImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesViewController.h; sourceTree = "<group>"; };
 		5A60BD62154031F0001B69E6 /* ImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesViewController.m; sourceTree = "<group>"; };
+		5A60BD8C154037D5001B69E6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5A60BD8E15403802001B69E6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		5A7EDC28153431F90065CFA1 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		5A7EDC29153431F90065CFA1 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		5A7EDC2C1534580F0065CFA1 /* IncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentViewController.h; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A60BD8F15403802001B69E6 /* CoreVideo.framework in Frameworks */,
+				5A60BD8D154037D5001B69E6 /* AVFoundation.framework in Frameworks */,
 				5AC200CD152D7BC200866FC5 /* CoreLocation.framework in Frameworks */,
 				5AC200C4152CA92500866FC5 /* MapKit.framework in Frameworks */,
 				5AC200BD152C767A00866FC5 /* SystemConfiguration.framework in Frameworks */,
@@ -293,6 +299,8 @@
 		5AC2FFFC152C35F300866FC5 = {
 			isa = PBXGroup;
 			children = (
+				5A60BD8E15403802001B69E6 /* CoreVideo.framework */,
+				5A60BD8C154037D5001B69E6 /* AVFoundation.framework */,
 				5AC20011152C35F300866FC5 /* elme */,
 				5AC20032152C35F300866FC5 /* elmeTests */,
 				5AC2000A152C35F300866FC5 /* Frameworks */,

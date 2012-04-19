@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ImagesViewController : UIViewController
+
+@interface ImagesViewController : UIViewController<AVCaptureVideoDataOutputSampleBufferDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
+
+- (IBAction)takeImage:(id)sender;
+- (IBAction)deleteImage:(id)sender;
 
 @end
