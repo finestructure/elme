@@ -125,11 +125,8 @@
 
 
 - (IBAction)save:(id)sender {
-  if (self.detailItem == nil) {
-    self.detailItem = [[Incident alloc] initWithNewDocumentInDatabase:[Database sharedInstance].database];
-  }
-
-#warning assign attributes to save from GUI
+  DescriptionCell *cell = [cells objectAtIndex:1];
+  self.detailItem.desc = cell.textView.text;
   
   RESTOperation* op = [self.detailItem save];
   [op onCompletion: ^{
