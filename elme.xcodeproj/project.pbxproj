@@ -197,6 +197,9 @@
 		5AC2000A152C35F300866FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A60BD90154039A6001B69E6 /* CoreMedia.framework */,
+				5A60BD8E15403802001B69E6 /* CoreVideo.framework */,
+				5A60BD8C154037D5001B69E6 /* AVFoundation.framework */,
 				5AC200CC152D7BC200866FC5 /* CoreLocation.framework */,
 				5AC200C3152CA92500866FC5 /* MapKit.framework */,
 				5AC200BC152C767A00866FC5 /* SystemConfiguration.framework */,
@@ -302,9 +305,6 @@
 		5AC2FFFC152C35F300866FC5 = {
 			isa = PBXGroup;
 			children = (
-				5A60BD90154039A6001B69E6 /* CoreMedia.framework */,
-				5A60BD8E15403802001B69E6 /* CoreVideo.framework */,
-				5A60BD8C154037D5001B69E6 /* AVFoundation.framework */,
 				5AC20011152C35F300866FC5 /* elme */,
 				5AC20032152C35F300866FC5 /* elmeTests */,
 				5AC2000A152C35F300866FC5 /* Frameworks */,
