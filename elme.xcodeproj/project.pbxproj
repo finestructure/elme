@@ -26,6 +26,8 @@
 		5A60BD8F15403802001B69E6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A60BD8E15403802001B69E6 /* CoreVideo.framework */; };
 		5A60BD91154039A7001B69E6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A60BD90154039A6001B69E6 /* CoreMedia.framework */; };
 		5A60BD9B15405463001B69E6 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD9A1540545F001B69E6 /* NSData+MD5.m */; };
+		5A60BD9F154056D2001B69E6 /* SOCQ+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD9E154056D2001B69E6 /* SOCQ+NSArray.m */; };
+		5A60BDA215405992001B69E6 /* SOCQCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BDA115405992001B69E6 /* SOCQCore.m */; };
 		5A7EDC2A153431F90065CFA1 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC29153431F90065CFA1 /* Database.m */; };
 		5A7EDC2E1534580F0065CFA1 /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */; };
 		5A7EDC311534588B0065CFA1 /* CouchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */; };
@@ -91,6 +93,10 @@
 		5A60BD90154039A6001B69E6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		5A60BD991540545E001B69E6 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+MD5.h"; path = "vendor/NSData+MD5.h"; sourceTree = SOURCE_ROOT; };
 		5A60BD9A1540545F001B69E6 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+MD5.m"; path = "vendor/NSData+MD5.m"; sourceTree = SOURCE_ROOT; };
+		5A60BD9D154056D2001B69E6 /* SOCQ+NSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SOCQ+NSArray.h"; path = "vendor/SOCQ/SOCQ/SOCQ+NSArray.h"; sourceTree = SOURCE_ROOT; };
+		5A60BD9E154056D2001B69E6 /* SOCQ+NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SOCQ+NSArray.m"; path = "vendor/SOCQ/SOCQ/SOCQ+NSArray.m"; sourceTree = SOURCE_ROOT; };
+		5A60BDA015405992001B69E6 /* SOCQCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOCQCore.h; path = vendor/SOCQ/SOCQ/SOCQCore.h; sourceTree = SOURCE_ROOT; };
+		5A60BDA115405992001B69E6 /* SOCQCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOCQCore.m; path = vendor/SOCQ/SOCQ/SOCQCore.m; sourceTree = SOURCE_ROOT; };
 		5A7EDC28153431F90065CFA1 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		5A7EDC29153431F90065CFA1 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		5A7EDC2C1534580F0065CFA1 /* IncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentViewController.h; sourceTree = "<group>"; };
@@ -191,6 +197,10 @@
 		5A60BD9C1540546B001B69E6 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				5A60BDA015405992001B69E6 /* SOCQCore.h */,
+				5A60BDA115405992001B69E6 /* SOCQCore.m */,
+				5A60BD9D154056D2001B69E6 /* SOCQ+NSArray.h */,
+				5A60BD9E154056D2001B69E6 /* SOCQ+NSArray.m */,
 				5A60BD991540545E001B69E6 /* NSData+MD5.h */,
 				5A60BD9A1540545F001B69E6 /* NSData+MD5.m */,
 			);
@@ -472,6 +482,8 @@
 				5A60BD51153F04CB001B69E6 /* LocationViewController.m in Sources */,
 				5A60BD63154031F1001B69E6 /* ImagesViewController.m in Sources */,
 				5A60BD9B15405463001B69E6 /* NSData+MD5.m in Sources */,
+				5A60BD9F154056D2001B69E6 /* SOCQ+NSArray.m in Sources */,
+				5A60BDA215405992001B69E6 /* SOCQCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

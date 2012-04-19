@@ -12,8 +12,12 @@
 
 @property (retain) NSDate *created_at;
 @property (copy) NSString *desc;
+@property (retain) NSArray *imageNames;
 @property (copy) NSString *type;
 @property (copy) NSString *version;
 @property (retain) NSDictionary *unit;
+
+- (void)addImage:(UIImage *)image;
+- (NSArray *)images;
 
 @end
