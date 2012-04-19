@@ -166,7 +166,6 @@
   CGSize contentSize = CGSizeMake(totalWidth,
                                   nRows * rowHeight - sepWidth); // rowHeight includes sepWidth, remove extra one
   self.scrollView.contentSize = contentSize;
-  NSLog(@"content size: %f %f", contentSize.width, contentSize.height);
 }
 
 
