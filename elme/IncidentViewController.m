@@ -122,7 +122,7 @@
   if ([[segue identifier] isEqualToString:@"NewIncident"]) {
     UINavigationController *nc = [segue destinationViewController];
     EditIncidentViewController *vc = (EditIncidentViewController *)nc.topViewController;
-    vc.detailItem = nil;
+    vc.detailItem = [[Incident alloc] initWithNewDocumentInDatabase:[Database sharedInstance].database];
   }
 }
 
