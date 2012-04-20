@@ -47,7 +47,6 @@
 {
   if (_detailItem != newDetailItem) {
     _detailItem = newDetailItem;
-    
     [self configureView];
   }
 }
@@ -66,6 +65,9 @@
     NSString *date = [formatter stringFromDate:self.detailItem.created_at];
     NSString *title = NSLocalizedString(@"Vorfall vom %@", @"Edit incident title");
     self.title = [NSString stringWithFormat:title, date];
+    
+    ImagesCell *imagesCell = [cells objectAtIndex:2];
+    imagesCell.detailItem = self.detailItem.images;
   } else {
     self.title = NSLocalizedString(@"Neuer Vorfall", @"Edit incident title (new incident)");
   }
@@ -254,7 +256,7 @@
       break;
       
     case 2:
-      ((ImagesCell *)cell).detailItem = self.detailItem.images;
+      // images cell has its detailItem already assigned in configureView
       break;
   }
   return cell;
