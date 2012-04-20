@@ -195,7 +195,9 @@
   [self.imagePreview.layer addSublayer:captureVideoPreviewLayer];  
   
   // start AV session
-  [session startRunning];
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    [session startRunning];
+  });
   
   // configure images view
   self.imagesView.growthDirection = kVertical;

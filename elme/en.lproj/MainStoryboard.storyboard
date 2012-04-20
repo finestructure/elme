@@ -212,6 +212,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="4Sc-D4-bdM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="D24-7Z-Cjk" customClass="ImagesView">
                                 <rect key="frame" x="6" y="264" width="308" height="100"/>
