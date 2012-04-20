@@ -8,6 +8,7 @@
 
 #import "ImagesViewController.h"
 
+#import "GCD.h"
 #import "ImagesView.h"
 #import "Incident.h"
 
@@ -195,9 +196,10 @@
   [self.imagePreview.layer addSublayer:captureVideoPreviewLayer];  
   
   // start AV session
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+  [GCD runBlockInBackground:^{
     [session startRunning];
-  });
+  }];
   
   // configure images view
   self.imagesView.growthDirection = kVertical;
