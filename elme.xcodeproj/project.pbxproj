@@ -101,6 +101,7 @@
 		5A60BDA515414002001B69E6 /* ImagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesView.m; sourceTree = "<group>"; };
 		5A60BDCF154166E2001B69E6 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
 		5A60BDD0154166E2001B69E6 /* GCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCD.m; sourceTree = "<group>"; };
+		5A60BDE215418204001B69E6 /* Protocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Protocols.h; sourceTree = "<group>"; };
 		5A7EDC28153431F90065CFA1 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		5A7EDC29153431F90065CFA1 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		5A7EDC2C1534580F0065CFA1 /* IncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentViewController.h; sourceTree = "<group>"; };
@@ -261,6 +262,7 @@
 			children = (
 				5AC2001A152C35F300866FC5 /* AppDelegate.h */,
 				5AC2001B152C35F300866FC5 /* AppDelegate.m */,
+				5A60BDE215418204001B69E6 /* Protocols.h */,
 				5AC2001D152C35F300866FC5 /* MainStoryboard.storyboard */,
 				5AC200C1152C9E1A00866FC5 /* Model */,
 				5A7EDC2F1534588B0065CFA1 /* CouchTableViewController.h */,
