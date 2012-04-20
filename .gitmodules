@@ -1,0 +1,3 @@
+[submodule "vendor/SOCQ"]
+	path = vendor/SOCQ
+	url = https://github.com/acburk/SOCQ.git

@@ -7,6 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A60BCB8153DC32F001B69E6 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BCB7153DC32F001B69E6 /* LocationCell.xib */; };
+		5A60BCE4153DC8D7001B69E6 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BCE3153DC8D7001B69E6 /* LocationCell.m */; };
+		5A60BD37153DCE04001B69E6 /* DescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD36153DCE04001B69E6 /* DescriptionCell.m */; };
+		5A60BD3A153DCE21001B69E6 /* ImagesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD39153DCE21001B69E6 /* ImagesCell.m */; };
+		5A60BD3C153DCE3B001B69E6 /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BD3B153DCE3B001B69E6 /* DescriptionCell.xib */; };
+		5A60BD3E153DCE46001B69E6 /* ImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BD3D153DCE46001B69E6 /* ImagesCell.xib */; };
+		5A60BD45153EE5E0001B69E6 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BD43153EE5E0001B69E6 /* 86-camera.png */; };
+		5A60BD46153EE5E0001B69E6 /* 86-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A60BD44153EE5E0001B69E6 /* 86-camera@2x.png */; };
+		5A60BD51153F04CB001B69E6 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD50153F04CB001B69E6 /* LocationViewController.m */; };
+		5A60BD57153FFCD5001B69E6 /* Incident.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC5B153489910065CFA1 /* Incident.m */; };
+		5A60BD58153FFD05001B69E6 /* CouchCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2008A152C672E00866FC5 /* CouchCocoa.framework */; };
+		5A60BD59153FFD05001B69E6 /* TouchDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2008B152C672E00866FC5 /* TouchDB.framework */; };
+		5A60BD5A153FFD18001B69E6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200B8152C764B00866FC5 /* libsqlite3.dylib */; };
+		5A60BD5B153FFD1F001B69E6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200B6152C764200866FC5 /* libz.dylib */; };
+		5A60BD63154031F1001B69E6 /* ImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD62154031F0001B69E6 /* ImagesViewController.m */; };
+		5A60BD8D154037D5001B69E6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A60BD8C154037D5001B69E6 /* AVFoundation.framework */; };
+		5A60BD8F15403802001B69E6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A60BD8E15403802001B69E6 /* CoreVideo.framework */; };
+		5A60BD91154039A7001B69E6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A60BD90154039A6001B69E6 /* CoreMedia.framework */; };
+		5A60BD9B15405463001B69E6 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD9A1540545F001B69E6 /* NSData+MD5.m */; };
+		5A60BD9F154056D2001B69E6 /* SOCQ+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD9E154056D2001B69E6 /* SOCQ+NSArray.m */; };
+		5A60BDA215405992001B69E6 /* SOCQCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BDA115405992001B69E6 /* SOCQCore.m */; };
+		5A60BDA615414002001B69E6 /* ImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BDA515414002001B69E6 /* ImagesView.m */; };
+		5A60BDD1154166E2001B69E6 /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BDD0154166E2001B69E6 /* GCD.m */; };
+		5A7EDC2A153431F90065CFA1 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC29153431F90065CFA1 /* Database.m */; };
+		5A7EDC2E1534580F0065CFA1 /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */; };
+		5A7EDC311534588B0065CFA1 /* CouchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */; };
+		5A7EDC5C153489910065CFA1 /* Incident.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC5B153489910065CFA1 /* Incident.m */; };
+		5A7EDC5F153579EC0065CFA1 /* EditIncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC5E153579EB0065CFA1 /* EditIncidentViewController.m */; };
 		5AC2000C152C35F300866FC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000B152C35F300866FC5 /* UIKit.framework */; };
 		5AC2000E152C35F300866FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000D152C35F300866FC5 /* Foundation.framework */; };
 		5AC20010152C35F300866FC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000F152C35F300866FC5 /* CoreGraphics.framework */; };
@@ -14,13 +42,11 @@
 		5AC20018152C35F300866FC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20017152C35F300866FC5 /* main.m */; };
 		5AC2001C152C35F300866FC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2001B152C35F300866FC5 /* AppDelegate.m */; };
 		5AC2001F152C35F300866FC5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2001D152C35F300866FC5 /* MainStoryboard.storyboard */; };
-		5AC20022152C35F300866FC5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20021152C35F300866FC5 /* MasterViewController.m */; };
-		5AC20025152C35F300866FC5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20024152C35F300866FC5 /* DetailViewController.m */; };
 		5AC2002D152C35F300866FC5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2002C152C35F300866FC5 /* SenTestingKit.framework */; };
 		5AC2002E152C35F300866FC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000B152C35F300866FC5 /* UIKit.framework */; };
 		5AC2002F152C35F300866FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000D152C35F300866FC5 /* Foundation.framework */; };
 		5AC20037152C35F300866FC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AC20035152C35F300866FC5 /* InfoPlist.strings */; };
-		5AC2003A152C35F300866FC5 /* elmeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20039152C35F300866FC5 /* elmeTests.m */; };
+		5AC2003A152C35F300866FC5 /* DatabaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20039152C35F300866FC5 /* DatabaseTests.m */; };
 		5AC2004D152C4C1F00866FC5 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2004B152C4C1F00866FC5 /* icon-57.png */; };
 		5AC2004E152C4C1F00866FC5 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2004C152C4C1F00866FC5 /* icon-114.png */; };
 		5AC2007B152C64E000866FC5 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20078152C64E000866FC5 /* Configuration.m */; };
@@ -47,6 +73,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A60BCB7153DC32F001B69E6 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		5A60BCE2153DC8D7001B69E6 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
+		5A60BCE3153DC8D7001B69E6 /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
+		5A60BD35153DCE04001B69E6 /* DescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionCell.h; sourceTree = "<group>"; };
+		5A60BD36153DCE04001B69E6 /* DescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionCell.m; sourceTree = "<group>"; };
+		5A60BD38153DCE21001B69E6 /* ImagesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesCell.h; sourceTree = "<group>"; };
+		5A60BD39153DCE21001B69E6 /* ImagesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesCell.m; sourceTree = "<group>"; };
+		5A60BD3B153DCE3B001B69E6 /* DescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
+		5A60BD3D153DCE46001B69E6 /* ImagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagesCell.xib; sourceTree = "<group>"; };
+		5A60BD43153EE5E0001B69E6 /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
+		5A60BD44153EE5E0001B69E6 /* 86-camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera@2x.png"; sourceTree = "<group>"; };
+		5A60BD4F153F04CB001B69E6 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		5A60BD50153F04CB001B69E6 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		5A60BD61154031F0001B69E6 /* ImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesViewController.h; sourceTree = "<group>"; };
+		5A60BD62154031F0001B69E6 /* ImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesViewController.m; sourceTree = "<group>"; };
+		5A60BD8C154037D5001B69E6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5A60BD8E15403802001B69E6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		5A60BD90154039A6001B69E6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		5A60BD991540545E001B69E6 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+MD5.h"; path = "vendor/NSData+MD5.h"; sourceTree = SOURCE_ROOT; };
+		5A60BD9A1540545F001B69E6 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+MD5.m"; path = "vendor/NSData+MD5.m"; sourceTree = SOURCE_ROOT; };
+		5A60BD9D154056D2001B69E6 /* SOCQ+NSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SOCQ+NSArray.h"; path = "vendor/SOCQ/SOCQ/SOCQ+NSArray.h"; sourceTree = SOURCE_ROOT; };
+		5A60BD9E154056D2001B69E6 /* SOCQ+NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SOCQ+NSArray.m"; path = "vendor/SOCQ/SOCQ/SOCQ+NSArray.m"; sourceTree = SOURCE_ROOT; };
+		5A60BDA015405992001B69E6 /* SOCQCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOCQCore.h; path = vendor/SOCQ/SOCQ/SOCQCore.h; sourceTree = SOURCE_ROOT; };
+		5A60BDA115405992001B69E6 /* SOCQCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOCQCore.m; path = vendor/SOCQ/SOCQ/SOCQCore.m; sourceTree = SOURCE_ROOT; };
+		5A60BDA415414002001B69E6 /* ImagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesView.h; sourceTree = "<group>"; };
+		5A60BDA515414002001B69E6 /* ImagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesView.m; sourceTree = "<group>"; };
+		5A60BDCF154166E2001B69E6 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
+		5A60BDD0154166E2001B69E6 /* GCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCD.m; sourceTree = "<group>"; };
+		5A60BDE215418204001B69E6 /* Protocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Protocols.h; sourceTree = "<group>"; };
+		5A7EDC28153431F90065CFA1 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
+		5A7EDC29153431F90065CFA1 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
+		5A7EDC2C1534580F0065CFA1 /* IncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentViewController.h; sourceTree = "<group>"; };
+		5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncidentViewController.m; sourceTree = "<group>"; };
+		5A7EDC2F1534588B0065CFA1 /* CouchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchTableViewController.h; sourceTree = "<group>"; };
+		5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchTableViewController.m; sourceTree = "<group>"; };
+		5A7EDC5A153489910065CFA1 /* Incident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Incident.h; sourceTree = "<group>"; };
+		5A7EDC5B153489910065CFA1 /* Incident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Incident.m; sourceTree = "<group>"; };
+		5A7EDC5D153579EB0065CFA1 /* EditIncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditIncidentViewController.h; sourceTree = "<group>"; };
+		5A7EDC5E153579EB0065CFA1 /* EditIncidentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditIncidentViewController.m; sourceTree = "<group>"; };
 		5AC20007152C35F300866FC5 /* elme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = elme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2000B152C35F300866FC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5AC2000D152C35F300866FC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,16 +123,11 @@
 		5AC2001A152C35F300866FC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5AC2001B152C35F300866FC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5AC2001E152C35F300866FC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5AC20020152C35F300866FC5 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		5AC20021152C35F300866FC5 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		5AC20023152C35F300866FC5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		5AC20024152C35F300866FC5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5AC2002B152C35F300866FC5 /* elmeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = elmeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2002C152C35F300866FC5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		5AC20034152C35F300866FC5 /* elmeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "elmeTests-Info.plist"; sourceTree = "<group>"; };
 		5AC20036152C35F300866FC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5AC20038152C35F300866FC5 /* elmeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = elmeTests.h; sourceTree = "<group>"; };
-		5AC20039152C35F300866FC5 /* elmeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = elmeTests.m; sourceTree = "<group>"; };
+		5AC20039152C35F300866FC5 /* DatabaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatabaseTests.m; sourceTree = "<group>"; };
 		5AC2004B152C4C1F00866FC5 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = SOURCE_ROOT; };
 		5AC2004C152C4C1F00866FC5 /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = SOURCE_ROOT; };
 		5AC20077152C64E000866FC5 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
@@ -93,6 +153,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A60BD91154039A7001B69E6 /* CoreMedia.framework in Frameworks */,
+				5A60BD8F15403802001B69E6 /* CoreVideo.framework in Frameworks */,
+				5A60BD8D154037D5001B69E6 /* AVFoundation.framework in Frameworks */,
 				5AC200CD152D7BC200866FC5 /* CoreLocation.framework in Frameworks */,
 				5AC200C4152CA92500866FC5 /* MapKit.framework in Frameworks */,
 				5AC200BD152C767A00866FC5 /* SystemConfiguration.framework in Frameworks */,
@@ -110,6 +173,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A60BD5B153FFD1F001B69E6 /* libz.dylib in Frameworks */,
+				5A60BD5A153FFD18001B69E6 /* libsqlite3.dylib in Frameworks */,
+				5A60BD58153FFD05001B69E6 /* CouchCocoa.framework in Frameworks */,
+				5A60BD59153FFD05001B69E6 /* TouchDB.framework in Frameworks */,
 				5AC2002D152C35F300866FC5 /* SenTestingKit.framework in Frameworks */,
 				5AC2002E152C35F300866FC5 /* UIKit.framework in Frameworks */,
 				5AC2002F152C35F300866FC5 /* Foundation.framework in Frameworks */,
@@ -119,6 +186,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A60BD42153EE590001B69E6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5A60BD43153EE5E0001B69E6 /* 86-camera.png */,
+				5A60BD44153EE5E0001B69E6 /* 86-camera@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5A60BD9C1540546B001B69E6 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				5A60BDA015405992001B69E6 /* SOCQCore.h */,
+				5A60BDA115405992001B69E6 /* SOCQCore.m */,
+				5A60BD9D154056D2001B69E6 /* SOCQ+NSArray.h */,
+				5A60BD9E154056D2001B69E6 /* SOCQ+NSArray.m */,
+				5A60BD991540545E001B69E6 /* NSData+MD5.h */,
+				5A60BD9A1540545F001B69E6 /* NSData+MD5.m */,
+			);
+			name = vendor;
+			sourceTree = "<group>";
+		};
+		5A60BDA315413707001B69E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A60BCB7153DC32F001B69E6 /* LocationCell.xib */,
+				5A60BCE2153DC8D7001B69E6 /* LocationCell.h */,
+				5A60BCE3153DC8D7001B69E6 /* LocationCell.m */,
+				5A60BD3B153DCE3B001B69E6 /* DescriptionCell.xib */,
+				5A60BD35153DCE04001B69E6 /* DescriptionCell.h */,
+				5A60BD36153DCE04001B69E6 /* DescriptionCell.m */,
+				5A60BD3D153DCE46001B69E6 /* ImagesCell.xib */,
+				5A60BD38153DCE21001B69E6 /* ImagesCell.h */,
+				5A60BD39153DCE21001B69E6 /* ImagesCell.m */,
+				5A60BDA415414002001B69E6 /* ImagesView.h */,
+				5A60BDA515414002001B69E6 /* ImagesView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		5AC20008152C35F300866FC5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +238,9 @@
 		5AC2000A152C35F300866FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A60BD90154039A6001B69E6 /* CoreMedia.framework */,
+				5A60BD8E15403802001B69E6 /* CoreVideo.framework */,
+				5A60BD8C154037D5001B69E6 /* AVFoundation.framework */,
 				5AC200CC152D7BC200866FC5 /* CoreLocation.framework */,
 				5AC200C3152CA92500866FC5 /* MapKit.framework */,
 				5AC200BC152C767A00866FC5 /* SystemConfiguration.framework */,
@@ -152,12 +262,22 @@
 			children = (
 				5AC2001A152C35F300866FC5 /* AppDelegate.h */,
 				5AC2001B152C35F300866FC5 /* AppDelegate.m */,
+				5A60BDE215418204001B69E6 /* Protocols.h */,
 				5AC2001D152C35F300866FC5 /* MainStoryboard.storyboard */,
 				5AC200C1152C9E1A00866FC5 /* Model */,
-				5AC20020152C35F300866FC5 /* MasterViewController.h */,
-				5AC20021152C35F300866FC5 /* MasterViewController.m */,
-				5AC20023152C35F300866FC5 /* DetailViewController.h */,
-				5AC20024152C35F300866FC5 /* DetailViewController.m */,
+				5A7EDC2F1534588B0065CFA1 /* CouchTableViewController.h */,
+				5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */,
+				5A7EDC2C1534580F0065CFA1 /* IncidentViewController.h */,
+				5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */,
+				5A7EDC5D153579EB0065CFA1 /* EditIncidentViewController.h */,
+				5A7EDC5E153579EB0065CFA1 /* EditIncidentViewController.m */,
+				5A60BD4F153F04CB001B69E6 /* LocationViewController.h */,
+				5A60BD50153F04CB001B69E6 /* LocationViewController.m */,
+				5A60BD61154031F0001B69E6 /* ImagesViewController.h */,
+				5A60BD62154031F0001B69E6 /* ImagesViewController.m */,
+				5A60BDA315413707001B69E6 /* Views */,
+				5A60BD9C1540546B001B69E6 /* vendor */,
+				5A60BD42153EE590001B69E6 /* Resources */,
 				5AC20012152C35F300866FC5 /* Supporting Files */,
 			);
 			path = elme;
@@ -179,8 +299,7 @@
 		5AC20032152C35F300866FC5 /* elmeTests */ = {
 			isa = PBXGroup;
 			children = (
-				5AC20038152C35F300866FC5 /* elmeTests.h */,
-				5AC20039152C35F300866FC5 /* elmeTests.m */,
+				5AC20039152C35F300866FC5 /* DatabaseTests.m */,
 				5AC20033152C35F300866FC5 /* Supporting Files */,
 			);
 			path = elmeTests;
@@ -204,8 +323,14 @@
 				5AC20078152C64E000866FC5 /* Configuration.m */,
 				5AC20079152C64E000866FC5 /* Globals.h */,
 				5AC2007A152C64E000866FC5 /* Globals.m */,
+				5A7EDC5A153489910065CFA1 /* Incident.h */,
+				5A7EDC5B153489910065CFA1 /* Incident.m */,
 				5AC200BE152C9E0C00866FC5 /* Project.h */,
 				5AC200BF152C9E0C00866FC5 /* Project.m */,
+				5A7EDC28153431F90065CFA1 /* Database.h */,
+				5A7EDC29153431F90065CFA1 /* Database.m */,
+				5A60BDCF154166E2001B69E6 /* GCD.h */,
+				5A60BDD0154166E2001B69E6 /* GCD.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -296,6 +421,11 @@
 				5AC2001F152C35F300866FC5 /* MainStoryboard.storyboard in Resources */,
 				5AC2004D152C4C1F00866FC5 /* icon-57.png in Resources */,
 				5AC2004E152C4C1F00866FC5 /* icon-114.png in Resources */,
+				5A60BCB8153DC32F001B69E6 /* LocationCell.xib in Resources */,
+				5A60BD3C153DCE3B001B69E6 /* DescriptionCell.xib in Resources */,
+				5A60BD3E153DCE46001B69E6 /* ImagesCell.xib in Resources */,
+				5A60BD45153EE5E0001B69E6 /* 86-camera.png in Resources */,
+				5A60BD46153EE5E0001B69E6 /* 86-camera@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,12 +475,25 @@
 			files = (
 				5AC20018152C35F300866FC5 /* main.m in Sources */,
 				5AC2001C152C35F300866FC5 /* AppDelegate.m in Sources */,
-				5AC20022152C35F300866FC5 /* MasterViewController.m in Sources */,
-				5AC20025152C35F300866FC5 /* DetailViewController.m in Sources */,
 				5AC2007B152C64E000866FC5 /* Configuration.m in Sources */,
 				5AC2007C152C64E000866FC5 /* Globals.m in Sources */,
 				5AC200C0152C9E0C00866FC5 /* Project.m in Sources */,
 				5AC200D0152D7BE400866FC5 /* Annotation.m in Sources */,
+				5A7EDC2A153431F90065CFA1 /* Database.m in Sources */,
+				5A7EDC2E1534580F0065CFA1 /* IncidentViewController.m in Sources */,
+				5A7EDC311534588B0065CFA1 /* CouchTableViewController.m in Sources */,
+				5A7EDC5C153489910065CFA1 /* Incident.m in Sources */,
+				5A7EDC5F153579EC0065CFA1 /* EditIncidentViewController.m in Sources */,
+				5A60BCE4153DC8D7001B69E6 /* LocationCell.m in Sources */,
+				5A60BD37153DCE04001B69E6 /* DescriptionCell.m in Sources */,
+				5A60BD3A153DCE21001B69E6 /* ImagesCell.m in Sources */,
+				5A60BD51153F04CB001B69E6 /* LocationViewController.m in Sources */,
+				5A60BD63154031F1001B69E6 /* ImagesViewController.m in Sources */,
+				5A60BD9B15405463001B69E6 /* NSData+MD5.m in Sources */,
+				5A60BD9F154056D2001B69E6 /* SOCQ+NSArray.m in Sources */,
+				5A60BDA215405992001B69E6 /* SOCQCore.m in Sources */,
+				5A60BDA615414002001B69E6 /* ImagesView.m in Sources */,
+				5A60BDD1154166E2001B69E6 /* GCD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +501,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AC2003A152C35F300866FC5 /* elmeTests.m in Sources */,
+				5A60BD57153FFCD5001B69E6 /* Incident.m in Sources */,
+				5AC2003A152C35F300866FC5 /* DatabaseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,8 +599,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
 				INFOPLIST_FILE = "elme/elme-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Wl,-no_pie",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -471,8 +620,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
 				INFOPLIST_FILE = "elme/elme-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Wl,-no_pie",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -484,6 +638,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
@@ -501,6 +656,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "elme/elme-Prefix.pch";
@@ -530,6 +686,7 @@
 				5AC2003F152C35F300866FC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AC20040152C35F300866FC5 /* Build configuration list for PBXNativeTarget "elmeTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +695,7 @@
 				5AC20042152C35F300866FC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
