@@ -206,6 +206,7 @@
   self.imagesView.imageAspectRatio = 4./3.;
   self.imagesView.imagesPerFixedDimension = 4;
   self.imagesView.padding = 4;
+  self.imagesView.allowsSelection = YES;
   
   [self configureView];
 }

@@ -21,5 +21,10 @@ typedef enum ImagesViewGrowthDirection {
 @property (assign) CGFloat imageAspectRatio;
 @property (assign) CGFloat padding;
 @property (assign) NSUInteger imagesPerFixedDimension;
+@property (assign) BOOL allowsSelection;
+@property (strong, nonatomic) UIColor *selectionColor;
+@property (assign) CGFloat selectionBorderWidth;
+
+@property (readonly) UIImage *selectedImage;
 
 @end
