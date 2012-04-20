@@ -18,6 +18,7 @@
 @property (retain) NSDictionary *unit;
 
 - (void)addImage:(UIImage *)image;
+- (void)removeImageAtIndex:(NSUInteger)index;
 - (NSArray *)images;
 
 @end

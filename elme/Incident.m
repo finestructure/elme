@@ -57,14 +57,33 @@
 }
 
 
-- (NSArray *)images {
-  NSMutableArray *images = [NSMutableArray array];
+- (void)removeImageAtIndex:(NSUInteger)index {
+  @try {
+    CouchAttachment *attachment = [self.imageAttachments objectAtIndex:index];
+    [self removeAttachmentNamed:attachment.name];
+  }
+  @catch (NSException *exception) {
+  }
+}
+
+
+- (NSArray *)imageAttachments {
+  NSMutableArray *attachments = [NSMutableArray array];
   for (NSString *fileName in self.imageNames) {
     CouchAttachment* attachment = [self attachmentNamed:fileName];
     if (attachment != nil) {
-      UIImage *image = [[UIImage alloc] initWithData: attachment.body];
-      [images addObject:image];
+      [attachments addObject:attachment];
     }
+  }
+  return attachments;
+}
+
+
+- (NSArray *)images {
+  NSMutableArray *images = [NSMutableArray array];
+  for (CouchAttachment *attachment in self.imageAttachments) {
+    UIImage *image = [[UIImage alloc] initWithData: attachment.body];
+    [images addObject:image];
   }
   return images;
 }
