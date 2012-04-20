@@ -11,6 +11,7 @@
 #import "Annotation.h"
 #import "Database.h"
 #import "DescriptionCell.h"
+#import "ImagesCell.h"
 #import "ImagesViewController.h"
 #import "Incident.h"
 #import "LocationCell.h"
@@ -257,6 +258,10 @@
       
     case 1:
       ((DescriptionCell *)cell).textView.text = self.detailItem ? self.detailItem.desc : @"";
+      break;
+      
+    case 2:
+      ((ImagesCell *)cell).detailItem = self.detailItem.images;
       break;
   }
   return cell;

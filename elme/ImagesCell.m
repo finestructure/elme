@@ -10,20 +10,32 @@
 
 @implementation ImagesCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+@synthesize detailItem = _detailItem;
+@synthesize noImagesView = _noImagesView;
+@synthesize scrollView = _scrollView;
+
+
+#pragma mark - Managing the detail item
+
+
+- (void)setDetailItem:(id)newDetailItem
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+  if (_detailItem != newDetailItem) {
+    _detailItem = newDetailItem;
+    
+    [self configureView];
+  }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+
+- (void)configureView {
+  if (self.detailItem.count == 0) {
+    self.noImagesView.hidden = NO;
+  } else {
+    self.noImagesView.hidden = YES;
+  }
 }
+
 
 @end

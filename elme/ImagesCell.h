@@ -10,4 +10,9 @@
 
 @interface ImagesCell : UITableViewCell
 
+@property (strong, nonatomic) NSArray *detailItem;
+
+@property (weak, nonatomic) IBOutlet UIView *noImagesView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end
