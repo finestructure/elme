@@ -201,6 +201,22 @@
 			name = vendor;
 			sourceTree = "<group>";
 		};
+		5A60BDA315413707001B69E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5A60BCB7153DC32F001B69E6 /* LocationCell.xib */,
+				5A60BCE2153DC8D7001B69E6 /* LocationCell.h */,
+				5A60BCE3153DC8D7001B69E6 /* LocationCell.m */,
+				5A60BD3B153DCE3B001B69E6 /* DescriptionCell.xib */,
+				5A60BD35153DCE04001B69E6 /* DescriptionCell.h */,
+				5A60BD36153DCE04001B69E6 /* DescriptionCell.m */,
+				5A60BD3D153DCE46001B69E6 /* ImagesCell.xib */,
+				5A60BD38153DCE21001B69E6 /* ImagesCell.h */,
+				5A60BD39153DCE21001B69E6 /* ImagesCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		5AC20008152C35F300866FC5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,15 +265,7 @@
 				5A60BD50153F04CB001B69E6 /* LocationViewController.m */,
 				5A60BD61154031F0001B69E6 /* ImagesViewController.h */,
 				5A60BD62154031F0001B69E6 /* ImagesViewController.m */,
-				5A60BCB7153DC32F001B69E6 /* LocationCell.xib */,
-				5A60BCE2153DC8D7001B69E6 /* LocationCell.h */,
-				5A60BCE3153DC8D7001B69E6 /* LocationCell.m */,
-				5A60BD3B153DCE3B001B69E6 /* DescriptionCell.xib */,
-				5A60BD35153DCE04001B69E6 /* DescriptionCell.h */,
-				5A60BD36153DCE04001B69E6 /* DescriptionCell.m */,
-				5A60BD3D153DCE46001B69E6 /* ImagesCell.xib */,
-				5A60BD38153DCE21001B69E6 /* ImagesCell.h */,
-				5A60BD39153DCE21001B69E6 /* ImagesCell.m */,
+				5A60BDA315413707001B69E6 /* Cells */,
 				5A60BD9C1540546B001B69E6 /* vendor */,
 				5A60BD42153EE590001B69E6 /* Resources */,
 				5AC20012152C35F300866FC5 /* Supporting Files */,
