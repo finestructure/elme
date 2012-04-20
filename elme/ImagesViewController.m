@@ -198,8 +198,9 @@
   [session startRunning];
   
   // configure images view
+  self.imagesView.growthDirection = kVertical;
   self.imagesView.imageAspectRatio = 4./3.;
-  self.imagesView.imagesPerRow = 4;
+  self.imagesView.imagesPerFixedDimension = 4;
   self.imagesView.padding = 4;
   
   [self configureView];

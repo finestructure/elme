@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum ImagesViewGrowthDirection {
+  kVertical,
+  kHorizontal
+} ImagesViewGrowthDirection;
+
+
 @interface ImagesView : UIScrollView
 
 @property (strong, nonatomic) NSArray *detailItem;
+@property (assign) ImagesViewGrowthDirection growthDirection;
 @property (assign) CGFloat imageAspectRatio;
 @property (assign) CGFloat padding;
-@property (assign) NSUInteger imagesPerRow;
+@property (assign) NSUInteger imagesPerFixedDimension;
 
 @end
