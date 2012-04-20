@@ -36,6 +36,12 @@
   } else {
     self.noImagesView.hidden = YES;
     self.imagesView.hidden = NO;
+    
+    // force image view size, because it can get out of sync with the cell height
+    CGRect frame = self.imagesView.frame;
+    frame.size.height = self.rowHeight - 16;
+    self.imagesView.frame = frame;
+    
     self.imagesView.growthDirection = kHorizontal;
     self.imagesView.imagesPerFixedDimension = 1;
     self.imagesView.imageAspectRatio = 4./3.;
