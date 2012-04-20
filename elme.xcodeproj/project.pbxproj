@@ -28,6 +28,7 @@
 		5A60BD9B15405463001B69E6 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD9A1540545F001B69E6 /* NSData+MD5.m */; };
 		5A60BD9F154056D2001B69E6 /* SOCQ+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BD9E154056D2001B69E6 /* SOCQ+NSArray.m */; };
 		5A60BDA215405992001B69E6 /* SOCQCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BDA115405992001B69E6 /* SOCQCore.m */; };
+		5A60BDA615414002001B69E6 /* ImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A60BDA515414002001B69E6 /* ImagesView.m */; };
 		5A7EDC2A153431F90065CFA1 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC29153431F90065CFA1 /* Database.m */; };
 		5A7EDC2E1534580F0065CFA1 /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC2D1534580F0065CFA1 /* IncidentViewController.m */; };
 		5A7EDC311534588B0065CFA1 /* CouchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EDC301534588B0065CFA1 /* CouchTableViewController.m */; };
@@ -95,6 +96,8 @@
 		5A60BD9E154056D2001B69E6 /* SOCQ+NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SOCQ+NSArray.m"; path = "vendor/SOCQ/SOCQ/SOCQ+NSArray.m"; sourceTree = SOURCE_ROOT; };
 		5A60BDA015405992001B69E6 /* SOCQCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOCQCore.h; path = vendor/SOCQ/SOCQ/SOCQCore.h; sourceTree = SOURCE_ROOT; };
 		5A60BDA115405992001B69E6 /* SOCQCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOCQCore.m; path = vendor/SOCQ/SOCQ/SOCQCore.m; sourceTree = SOURCE_ROOT; };
+		5A60BDA415414002001B69E6 /* ImagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesView.h; sourceTree = "<group>"; };
+		5A60BDA515414002001B69E6 /* ImagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesView.m; sourceTree = "<group>"; };
 		5A7EDC28153431F90065CFA1 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		5A7EDC29153431F90065CFA1 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		5A7EDC2C1534580F0065CFA1 /* IncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentViewController.h; sourceTree = "<group>"; };
@@ -201,7 +204,7 @@
 			name = vendor;
 			sourceTree = "<group>";
 		};
-		5A60BDA315413707001B69E6 /* Cells */ = {
+		5A60BDA315413707001B69E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5A60BCB7153DC32F001B69E6 /* LocationCell.xib */,
@@ -213,8 +216,10 @@
 				5A60BD3D153DCE46001B69E6 /* ImagesCell.xib */,
 				5A60BD38153DCE21001B69E6 /* ImagesCell.h */,
 				5A60BD39153DCE21001B69E6 /* ImagesCell.m */,
+				5A60BDA415414002001B69E6 /* ImagesView.h */,
+				5A60BDA515414002001B69E6 /* ImagesView.m */,
 			);
-			name = Cells;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		5AC20008152C35F300866FC5 /* Products */ = {
@@ -265,7 +270,7 @@
 				5A60BD50153F04CB001B69E6 /* LocationViewController.m */,
 				5A60BD61154031F0001B69E6 /* ImagesViewController.h */,
 				5A60BD62154031F0001B69E6 /* ImagesViewController.m */,
-				5A60BDA315413707001B69E6 /* Cells */,
+				5A60BDA315413707001B69E6 /* Views */,
 				5A60BD9C1540546B001B69E6 /* vendor */,
 				5A60BD42153EE590001B69E6 /* Resources */,
 				5AC20012152C35F300866FC5 /* Supporting Files */,
@@ -480,6 +485,7 @@
 				5A60BD9B15405463001B69E6 /* NSData+MD5.m in Sources */,
 				5A60BD9F154056D2001B69E6 /* SOCQ+NSArray.m in Sources */,
 				5A60BDA215405992001B69E6 /* SOCQCore.m in Sources */,
+				5A60BDA615414002001B69E6 /* ImagesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
