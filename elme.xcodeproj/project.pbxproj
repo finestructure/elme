@@ -40,8 +40,6 @@
 		5AC20018152C35F300866FC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20017152C35F300866FC5 /* main.m */; };
 		5AC2001C152C35F300866FC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2001B152C35F300866FC5 /* AppDelegate.m */; };
 		5AC2001F152C35F300866FC5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2001D152C35F300866FC5 /* MainStoryboard.storyboard */; };
-		5AC20022152C35F300866FC5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20021152C35F300866FC5 /* MasterViewController.m */; };
-		5AC20025152C35F300866FC5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20024152C35F300866FC5 /* DetailViewController.m */; };
 		5AC2002D152C35F300866FC5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2002C152C35F300866FC5 /* SenTestingKit.framework */; };
 		5AC2002E152C35F300866FC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000B152C35F300866FC5 /* UIKit.framework */; };
 		5AC2002F152C35F300866FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2000D152C35F300866FC5 /* Foundation.framework */; };
@@ -118,10 +116,6 @@
 		5AC2001A152C35F300866FC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5AC2001B152C35F300866FC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5AC2001E152C35F300866FC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5AC20020152C35F300866FC5 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		5AC20021152C35F300866FC5 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		5AC20023152C35F300866FC5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		5AC20024152C35F300866FC5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5AC2002B152C35F300866FC5 /* elmeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = elmeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2002C152C35F300866FC5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		5AC20034152C35F300866FC5 /* elmeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "elmeTests-Info.plist"; sourceTree = "<group>"; };
@@ -255,10 +249,6 @@
 				5A60BD50153F04CB001B69E6 /* LocationViewController.m */,
 				5A60BD61154031F0001B69E6 /* ImagesViewController.h */,
 				5A60BD62154031F0001B69E6 /* ImagesViewController.m */,
-				5AC20020152C35F300866FC5 /* MasterViewController.h */,
-				5AC20021152C35F300866FC5 /* MasterViewController.m */,
-				5AC20023152C35F300866FC5 /* DetailViewController.h */,
-				5AC20024152C35F300866FC5 /* DetailViewController.m */,
 				5A60BCB7153DC32F001B69E6 /* LocationCell.xib */,
 				5A60BCE2153DC8D7001B69E6 /* LocationCell.h */,
 				5A60BCE3153DC8D7001B69E6 /* LocationCell.m */,
@@ -465,8 +455,6 @@
 			files = (
 				5AC20018152C35F300866FC5 /* main.m in Sources */,
 				5AC2001C152C35F300866FC5 /* AppDelegate.m in Sources */,
-				5AC20022152C35F300866FC5 /* MasterViewController.m in Sources */,
-				5AC20025152C35F300866FC5 /* DetailViewController.m in Sources */,
 				5AC2007B152C64E000866FC5 /* Configuration.m in Sources */,
 				5AC2007C152C64E000866FC5 /* Globals.m in Sources */,
 				5AC200C0152C9E0C00866FC5 /* Project.m in Sources */,
