@@ -8,6 +8,7 @@
 
 #import "ImagesViewController.h"
 
+#import "ImagesView.h"
 #import "Incident.h"
 
 
@@ -23,7 +24,7 @@
 
 @synthesize detailItem = _detailItem;
 @synthesize imagePreview = _imagePreview;
-@synthesize scrollView = _scrollView;
+@synthesize imagesView = _imagesView;
 
 
 #pragma mark - Managing the detail item
@@ -41,7 +42,7 @@
 
 - (void)configureView
 {
-  [self showImages];
+  self.imagesView.detailItem = self.detailItem.images;
 }
 
 
@@ -54,7 +55,7 @@
     UIImage *image = [self convertSampleBufferToUIImage:sampleBuffer];
     if (image != nil) {
       [self.detailItem addImage:image];
-      [self showImages];
+      [self configureView];
     }
   }];
 }
@@ -160,39 +161,6 @@
 }
 
 
-- (void)showImages {
-  NSArray *images = self.detailItem.images;
-  
-  // grid configuration
-  CGFloat aspectRatio = 4./3.;
-  CGFloat sepWidth = 4;
-  int imagesPerRow = 4;
-
-  int totalWidth = self.scrollView.frame.size.width;
-  
-  int imageWidth = (totalWidth - ((imagesPerRow -1) * sepWidth)) / imagesPerRow;
-  int imageHeight = round(imageWidth/aspectRatio);
-  int colWidth = imageWidth + sepWidth;
-  int rowHeight = imageHeight + sepWidth;
-  
-  for (int i = 0; i < images.count; ++i) {
-    UIImage *image = [images objectAtIndex:i];
-    UIImageView *view = [[UIImageView alloc] initWithImage:image];
-//    view.userInteractionEnabled = YES;
-//    [view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)]];
-    
-    int col = i % imagesPerRow;
-    int row = i / imagesPerRow;
-    view.frame = CGRectMake(col*colWidth, row*rowHeight, imageWidth, imageHeight);
-    [self.scrollView addSubview:view];
-  }
-  int nRows = ceil(images.count / (float)imagesPerRow);
-  CGSize contentSize = CGSizeMake(totalWidth,
-                                  nRows * rowHeight - sepWidth); // rowHeight includes sepWidth, remove extra one
-  self.scrollView.contentSize = contentSize;
-}
-
-
 #pragma mark - Init and view lifecycle
 
 
@@ -229,14 +197,19 @@
   // start AV session
   [session startRunning];
   
-  [self showImages];
+  // configure images view
+  self.imagesView.imageAspectRatio = 4./3.;
+  self.imagesView.imagesPerRow = 4;
+  self.imagesView.padding = 4;
+  
+  [self configureView];
 }
 
 
 - (void)viewDidUnload
 {
   [self setImagePreview:nil];
-  [self setScrollView:nil];
+  [self setImagesView:nil];
   session = nil;
   [super viewDidUnload];
   // Release any retained subviews of the main view.
