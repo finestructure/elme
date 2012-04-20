@@ -15,6 +15,7 @@
 #import "ImagesViewController.h"
 #import "Incident.h"
 #import "LocationCell.h"
+#import "LocationViewController.h"
 
 
 @interface EditIncidentViewController () {
@@ -297,14 +298,37 @@
 }
 
 
+#pragma mark - DetailItemHandlerDelegate
+
+
+- (void)detailItemChanged {
+  if (! self.isNewItem) {
+    // only save on change if item is not new
+    // if it is, the complete item will be saved when the user chooses "save"
+    // and we want to avoid saving intermediate state before the new object is committed
+    RESTOperation *op = [self.detailItem save];
+    [op onCompletion:^{
+      if (op.error) {
+        [self failedWithError:op.error];
+      }
+    }];
+    [op start];
+  }
+}
+
+
 #pragma mark - Segue
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-  if ([[segue identifier] isEqualToString:@"ImagesDetail"]) {
+  if ([[segue identifier] isEqualToString:@"LocationDetail"]) {
+    LocationViewController *vc = [segue destinationViewController];
+    vc.delegate = self;
+  } else if ([[segue identifier] isEqualToString:@"ImagesDetail"]) {
     ImagesViewController *vc = [segue destinationViewController];
     vc.detailItem = self.detailItem;
+    vc.delegate = self;
   }
 }
 

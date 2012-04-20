@@ -23,6 +23,7 @@
 
 @implementation ImagesViewController
 
+@synthesize delegate = _delegate;
 @synthesize detailItem = _detailItem;
 @synthesize imagePreview = _imagePreview;
 @synthesize imagesView = _imagesView;
@@ -35,7 +36,6 @@
 {
   if (_detailItem != newDetailItem) {
     _detailItem = newDetailItem;
-    
     [self configureView];
   }
 }
@@ -57,6 +57,9 @@
     if (image != nil) {
       [self.detailItem addImage:image];
       [self configureView];
+      if ([self.delegate respondsToSelector:@selector(detailItemChanged)]) {
+        [self.delegate detailItemChanged];
+      }
     }
   }];
 }
@@ -65,6 +68,9 @@
 - (IBAction)deleteImage:(id)sender {
   [self.detailItem removeImageAtIndex:self.imagesView.selectedIndex];
   [self configureView];
+  if ([self.delegate respondsToSelector:@selector(detailItemChanged)]) {
+    [self.delegate detailItemChanged];
+  }
 }
 
 

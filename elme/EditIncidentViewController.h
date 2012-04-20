@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Protocols.h"
+
 @class Incident;
 
-@interface EditIncidentViewController : UIViewController<UIActionSheetDelegate>
+
+@interface EditIncidentViewController : UIViewController<UIActionSheetDelegate, DetailItemHandlerDelegate>
 
 @property (strong, nonatomic) Incident *detailItem;
 @property (assign) BOOL isNewItem;

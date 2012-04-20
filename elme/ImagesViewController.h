@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+#import "Protocols.h"
+
 @class Incident;
 @class ImagesView;
 
 @interface ImagesViewController : UIViewController<AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property (strong, nonatomic) Incident *detailItem;
+@property (weak, nonatomic) id<DetailItemHandlerDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
 @property (weak, nonatomic) IBOutlet ImagesView *imagesView;

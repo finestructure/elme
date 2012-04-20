@@ -22,6 +22,7 @@
 
 @implementation LocationViewController
 
+@synthesize delegate = _delegate;
 
 #pragma mark - CouchTableViewController methods
 
@@ -93,6 +94,10 @@
 
   [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
   [self.navigationController popViewControllerAnimated:YES];
+  
+  if ([self.delegate respondsToSelector:@selector(detailItemChanged)]) {
+    [self.delegate detailItemChanged];
+  }
 }
 
 

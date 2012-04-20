@@ -8,6 +8,10 @@
 
 #import "CouchTableViewController.h"
 
+#import "Protocols.h"
+
 @interface LocationViewController : CouchTableViewController
+
+@property (weak, nonatomic) id<DetailItemHandlerDelegate> delegate;
 
 @end
