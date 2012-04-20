@@ -46,36 +46,44 @@
   int colWidth = imageWidth + self.padding;
   int rowHeight = imageHeight + self.padding;
   
-  for (int i = 0; i < images.count; ++i) {
-    UIImage *image = [images objectAtIndex:i];
-    UIImageView *view = [[UIImageView alloc] initWithImage:image];
-    //    view.userInteractionEnabled = YES;
-    //    [view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)]];
-    
-    int col, row;
-    if (self.growthDirection == kVertical) {
-      col = i % self.imagesPerFixedDimension;
-      row = i / self.imagesPerFixedDimension;
-    } else {
-      col = i / self.imagesPerFixedDimension;
-      row = i % self.imagesPerFixedDimension;
+  // lay out images
+  {
+    [self.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+      [obj removeFromSuperview];
+    }];
+    for (int i = 0; i < images.count; ++i) {
+      UIImage *image = [images objectAtIndex:i];
+      UIImageView *view = [[UIImageView alloc] initWithImage:image];
+      //    view.userInteractionEnabled = YES;
+      //    [view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)]];
+      
+      int col, row;
+      if (self.growthDirection == kVertical) {
+        col = i % self.imagesPerFixedDimension;
+        row = i / self.imagesPerFixedDimension;
+      } else {
+        col = i / self.imagesPerFixedDimension;
+        row = i % self.imagesPerFixedDimension;
+      }
+      view.frame = CGRectMake(col*colWidth, row*rowHeight, imageWidth, imageHeight);
+      [self addSubview:view];
     }
-    view.frame = CGRectMake(col*colWidth, row*rowHeight, imageWidth, imageHeight);
-    [self addSubview:view];
   }
   
   // set content size
-  CGSize contentSize;
-  int nImagesInGrowthDirection = ceil(images.count / (float)self.imagesPerFixedDimension);
-  totalPadding = (nImagesInGrowthDirection -1) * self.padding;
-  if (self.growthDirection == kVertical) {
-    contentSize = CGSizeMake(totalSpace,
-                             nImagesInGrowthDirection * imageHeight + totalPadding);
-  } else {
-    contentSize = CGSizeMake(nImagesInGrowthDirection * imageWidth + totalPadding,
-                             totalSpace);
+  {
+    CGSize contentSize;
+    int nImagesInGrowthDirection = ceil(images.count / (float)self.imagesPerFixedDimension);
+    totalPadding = (nImagesInGrowthDirection -1) * self.padding;
+    if (self.growthDirection == kVertical) {
+      contentSize = CGSizeMake(totalSpace,
+                               nImagesInGrowthDirection * imageHeight + totalPadding);
+    } else {
+      contentSize = CGSizeMake(nImagesInGrowthDirection * imageWidth + totalPadding,
+                               totalSpace);
+    }
+    self.contentSize = contentSize;
   }
-  self.contentSize = contentSize;
 }
 
 
