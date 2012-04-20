@@ -57,8 +57,8 @@
   static NSDateFormatter *formatter = nil;
   if (formatter == nil) {
     formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
-    [formatter setTimeStyle:NSDateFormatterMediumStyle];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
   }
 
   if (self.detailItem) {
