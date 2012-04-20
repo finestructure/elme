@@ -81,6 +81,9 @@
     NSString *title = NSLocalizedString(@"Vorfall vom %@", @"Edit incident title");
     self.title = [NSString stringWithFormat:title, date];
     
+    DescriptionCell *descCell = [cells objectAtIndex:1];
+    descCell.textView.text = self.detailItem.desc;
+
     ImagesCell *imagesCell = [cells objectAtIndex:2];
     imagesCell.detailItem = self.detailItem.images;
   } else {
@@ -260,7 +263,6 @@
       break;
       
     case 1:
-      ((DescriptionCell *)cell).textView.text = self.detailItem ? self.detailItem.desc : @"";
       break;
       
     case 2:
@@ -314,6 +316,7 @@
     // if it is, the complete item will be saved when the user chooses "save"
     // and we want to avoid saving intermediate state before the new object is committed
     [self save];
+    [self.tableView reloadData];
   }
 }
 

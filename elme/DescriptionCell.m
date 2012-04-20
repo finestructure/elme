@@ -37,7 +37,7 @@
 
 
 - (CGFloat)rowHeight {
-  return 70;
+  return MIN(70, self.textView.contentSize.height +4);
 }
 
 
