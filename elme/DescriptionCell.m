@@ -10,6 +10,7 @@
 
 @implementation DescriptionCell
 
+@synthesize delegate = _delegate;
 @synthesize textView = _textView;
 
 
@@ -24,6 +25,14 @@
   
   [self.textView resignFirstResponder];
   return NO;
+}
+
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+  if ([self.delegate respondsToSelector:@selector(detailItemChanged)]) {
+    [self.delegate detailItemChanged];
+  }
 }
 
 

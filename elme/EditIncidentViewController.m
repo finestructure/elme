@@ -41,6 +41,20 @@
 }
 
 
+- (void)save {
+  DescriptionCell *cell = [cells objectAtIndex:1];
+  self.detailItem.desc = cell.textView.text;
+  
+  RESTOperation* op = [self.detailItem save];
+  [op onCompletion: ^{
+    if (op.error) {
+      [self failedWithError:op.error];
+    }
+  }];
+  [op start];
+}
+
+
 #pragma mark - Managing the detail item
 
 
@@ -104,6 +118,9 @@
   nib = [[NSBundle mainBundle] loadNibNamed:@"ImagesCell" owner:self options:nil];
   [cells addObject:[nib objectAtIndex:0]];
 
+  DescriptionCell *cell = [cells objectAtIndex:1];
+  cell.delegate = self;
+  
   [self configureView];
 }
 
@@ -145,17 +162,7 @@
 
 
 - (IBAction)save:(id)sender {
-  DescriptionCell *cell = [cells objectAtIndex:1];
-  self.detailItem.desc = cell.textView.text;
-  
-  RESTOperation* op = [self.detailItem save];
-  [op onCompletion: ^{
-    if (op.error) {
-      [self failedWithError:op.error];
-    }
-  }];
-  [op start];
-  
+  [self save];
   [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -306,13 +313,7 @@
     // only save on change if item is not new
     // if it is, the complete item will be saved when the user chooses "save"
     // and we want to avoid saving intermediate state before the new object is committed
-    RESTOperation *op = [self.detailItem save];
-    [op onCompletion:^{
-      if (op.error) {
-        [self failedWithError:op.error];
-      }
-    }];
-    [op start];
+    [self save];
   }
 }
 
