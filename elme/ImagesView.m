@@ -38,6 +38,11 @@
 }
 
 
+- (NSUInteger)selectedIndex {
+  return [self.detailItem indexOfObject:self.selectedImage];
+}
+
+
 #pragma mark - Actions
 
 

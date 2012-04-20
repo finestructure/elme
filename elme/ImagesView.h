@@ -26,5 +26,6 @@ typedef enum ImagesViewGrowthDirection {
 @property (assign) CGFloat selectionBorderWidth;
 
 @property (readonly) UIImage *selectedImage;
+@property (readonly) NSUInteger selectedIndex;
 
 @end

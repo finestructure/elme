@@ -61,7 +61,10 @@
   }];
 }
 
+
 - (IBAction)deleteImage:(id)sender {
+  [self.detailItem removeImageAtIndex:self.imagesView.selectedIndex];
+  [self configureView];
 }
 
 
