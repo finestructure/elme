@@ -17,4 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIView *noImagesView;
 @property (weak, nonatomic) IBOutlet ImagesView *imagesView;
 
+- (CGFloat)rowHeight;
+
 @end

@@ -162,6 +162,11 @@
 }
 
 
+- (CGFloat)rowHeight {
+  return 86;
+}
+
+
 #pragma mark - KVO
 
 

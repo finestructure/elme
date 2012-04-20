@@ -196,15 +196,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  // work-around for growing row height -- keep around initial values
-  static NSMutableArray *heights = nil;
-  if (heights == nil) {
-    heights = [NSMutableArray array];
-    for (UITableViewCell *cell in cells) {
-      [heights addObject:[NSNumber numberWithDouble:cell.bounds.size.height]];
-    }
-  }
-  return [[heights objectAtIndex:indexPath.section] doubleValue];
+  id cell = [cells objectAtIndex:indexPath.section];
+  return [cell rowHeight];
 }
 
 

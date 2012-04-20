@@ -45,4 +45,13 @@
 }
 
 
+- (CGFloat)rowHeight {
+  if (self.detailItem == nil || self.detailItem.count == 0) {
+    return 50;
+  } else {
+    return 70;
+  }
+}
+
+
 @end
