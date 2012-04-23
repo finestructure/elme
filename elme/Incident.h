@@ -8,7 +8,11 @@
 
 #import <CouchCocoa/CouchCocoa.h>
 
+#import "Protocols.h"
+
 @interface Incident : CouchModel
+
+@property (weak, nonatomic) id<DetailItemHandlerDelegate> delegate;
 
 @property (retain) NSDate *created_at;
 @property (copy) NSString *desc;

@@ -58,7 +58,9 @@
 - (void)setDetailItem:(id)newDetailItem
 {
   if (_detailItem != newDetailItem) {
+    _detailItem.delegate = nil;
     _detailItem = newDetailItem;
+    _detailItem.delegate = self;
     [self configureView];
   }
 }
@@ -318,6 +320,11 @@
     [self save];
     [self.tableView reloadData];
   }
+}
+
+
+- (void)detailItemChangedExternally {
+  [self configureView];
 }
 
 

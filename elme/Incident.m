@@ -15,6 +15,7 @@
 
 @implementation Incident
 
+@synthesize delegate;
 @dynamic created_at;
 @dynamic desc;
 @dynamic imageNames;
@@ -86,6 +87,14 @@
     [images addObject:image];
   }
   return images;
+}
+
+
+- (void)didLoadFromDocument {
+  NSLog(@"Incident %@ changed", self.document.documentID);
+  if ([self.delegate respondsToSelector:@selector(detailItemChangedExternally)]) {
+    [self.delegate detailItemChangedExternally];
+  }
 }
 
 
