@@ -11,6 +11,4 @@
 
 @interface IncidentViewController : CouchTableViewController
 
-- (IBAction)insertNewObject:(id)sender;
-
 @end

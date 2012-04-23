@@ -49,21 +49,6 @@
 }
 
 
-- (void)insertNewObject:(id)sender
-{
-  id obj = [[Incident alloc] initWithNewDocumentInDatabase:[Database sharedInstance].database];
-  
-  RESTOperation* op = [obj save];
-  [op onCompletion: ^{
-    if (op.error) {
-      [self failedWithError:op.error];
-    }
-    [self.dataSource.query start];
-  }];
-  [op start];
-}
-
-
 #pragma mark - Init & view lifecycle
 
 
