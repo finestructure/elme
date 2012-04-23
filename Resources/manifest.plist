@@ -25,7 +25,7 @@
                    <key>needs-shine</key>
                    <true/>
                    <key>url</key>
-                   <string>http://www.abstracture.de/~sas/elme/app_icon-57.png</string>
+                   <string>http://www.abstracture.de/~sas/elme/icon-57.png</string>
                </dict>
                <!-- full-size-image: the large 512x512 icon used by iTunes. -->
                <dict>
@@ -34,7 +34,7 @@
                    <key>needs-shine</key>
                    <true/>
                    <key>url</key>
-                   <string>http://www.abstracture.de/~sas/elme/app_icon-114.png</string>
+                   <string>http://www.abstracture.de/~sas/elme/icon-114.png</string>
                </dict>
            </array><key>metadata</key>
            <dict>
