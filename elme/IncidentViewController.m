@@ -9,6 +9,7 @@
 #import "IncidentViewController.h"
 
 #import "Database.h"
+#import "Globals.h"
 #import "EditIncidentViewController.h"
 #import "Incident.h"
 
@@ -24,6 +25,7 @@
 
 
 #pragma mark - CouchTableViewController methods
+@synthesize versionLabel;
 
 
 - (void)setupDataSource {
@@ -65,12 +67,14 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  self.versionLabel.text = [Globals sharedInstance].version;
   [self setupDataSource];
 }
 
 
 - (void)viewDidUnload
 {
+  [self setVersionLabel:nil];
   [super viewDidUnload];
   // Release any retained subviews of the main view.
 }

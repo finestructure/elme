@@ -11,4 +11,6 @@
 
 @interface IncidentViewController : CouchTableViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+
 @end
