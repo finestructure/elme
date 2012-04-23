@@ -42,9 +42,6 @@
 
 
 - (void)save {
-  DescriptionCell *cell = [cells objectAtIndex:1];
-  self.detailItem.desc = cell.textView.text;
-  
   RESTOperation* op = [self.detailItem save];
   [op onCompletion: ^{
     if (op.error) {
@@ -311,6 +308,9 @@
 
 
 - (void)detailItemChanged {
+  DescriptionCell *cell = [cells objectAtIndex:1];
+  self.detailItem.desc = cell.textView.text;
+  
   if (! self.isNewItem) {
     // only save on change if item is not new
     // if it is, the complete item will be saved when the user chooses "save"
