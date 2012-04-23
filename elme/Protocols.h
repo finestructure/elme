@@ -1,7 +1,7 @@
 
 @protocol DetailItemHandlerDelegate <NSObject>
 
-- (void)detailItemChanged;
+- (void)detailItemEdited;
 
 @end
 

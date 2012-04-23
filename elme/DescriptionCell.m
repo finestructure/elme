@@ -30,8 +30,8 @@
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
-  if ([self.delegate respondsToSelector:@selector(detailItemChanged)]) {
-    [self.delegate detailItemChanged];
+  if ([self.delegate respondsToSelector:@selector(detailItemEdited)]) {
+    [self.delegate detailItemEdited];
   }
 }
 

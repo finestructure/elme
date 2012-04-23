@@ -95,8 +95,8 @@
   [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
   [self.navigationController popViewControllerAnimated:YES];
   
-  if ([self.delegate respondsToSelector:@selector(detailItemChanged)]) {
-    [self.delegate detailItemChanged];
+  if ([self.delegate respondsToSelector:@selector(detailItemEdited)]) {
+    [self.delegate detailItemEdited];
   }
 }
 

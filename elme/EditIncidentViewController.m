@@ -307,7 +307,7 @@
 #pragma mark - DetailItemHandlerDelegate
 
 
-- (void)detailItemChanged {
+- (void)detailItemEdited {
   DescriptionCell *cell = [cells objectAtIndex:1];
   self.detailItem.desc = cell.textView.text;
   

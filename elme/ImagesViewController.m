@@ -57,8 +57,8 @@
     if (image != nil) {
       [self.detailItem addImage:image];
       [self configureView];
-      if ([self.delegate respondsToSelector:@selector(detailItemChanged)]) {
-        [self.delegate detailItemChanged];
+      if ([self.delegate respondsToSelector:@selector(detailItemEdited)]) {
+        [self.delegate detailItemEdited];
       }
     }
   }];
@@ -68,8 +68,8 @@
 - (IBAction)deleteImage:(id)sender {
   [self.detailItem removeImageAtIndex:self.imagesView.selectedIndex];
   [self configureView];
-  if ([self.delegate respondsToSelector:@selector(detailItemChanged)]) {
-    [self.delegate detailItemChanged];
+  if ([self.delegate respondsToSelector:@selector(detailItemEdited)]) {
+    [self.delegate detailItemEdited];
   }
 }
 
