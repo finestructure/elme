@@ -86,11 +86,18 @@
     return isModified(oldObj, newObj);
   }];
   
-  [self.tableView beginUpdates];
-  [self.tableView insertRowsAtIndexPaths:addedIndexPaths withRowAnimation:UITableViewRowAnimationTop];
-  [self.tableView deleteRowsAtIndexPaths:deletedIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
-  [self.tableView reloadRowsAtIndexPaths:modifiedIndexPaths withRowAnimation:UITableViewRowAnimationRight];
-  [self.tableView endUpdates];
+  if (newRows.count == addedIndexPaths.count - deletedIndexPaths.count + modifiedIndexPaths.count) {
+    // we have a consistent change
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:addedIndexPaths withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView deleteRowsAtIndexPaths:deletedIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
+    [self.tableView reloadRowsAtIndexPaths:modifiedIndexPaths withRowAnimation:UITableViewRowAnimationRight];
+    [self.tableView endUpdates];
+  } else {
+    // change with inconsisted row counts: update the whole table to avoid
+    // NSInternalInconsistencyException from UITableView
+    [self.tableView reloadData];
+  }
 }
 
 
