@@ -16,6 +16,7 @@
 @implementation Incident
 
 @synthesize delegate;
+@dynamic craft;
 @dynamic created_at;
 @dynamic desc;
 @dynamic imageNames;

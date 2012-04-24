@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) id<DetailItemHandlerDelegate> delegate;
 
+@property (copy) NSString *craft;
 @property (retain) NSDate *created_at;
 @property (copy) NSString *desc;
 @property (retain) NSArray *imageNames;
