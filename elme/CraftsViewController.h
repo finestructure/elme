@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Protocols.h"
+
+@class Incident;
+
 @interface CraftsViewController : UITableViewController
+
+@property (strong, nonatomic) Incident *detailItem;
+@property (weak, nonatomic) id<DetailItemHandlerDelegate> delegate;
 
 @end

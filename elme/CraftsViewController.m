@@ -8,13 +8,19 @@
 
 #import "CraftsViewController.h"
 
+#import "Incident.h"
+
 @interface CraftsViewController () {
   NSArray *crafts;
 }
 
 @end
 
+
 @implementation CraftsViewController
+
+@synthesize delegate = _delegate;
+@synthesize detailItem = _detailItem;
 
 
 - (void)viewDidLoad
@@ -62,7 +68,13 @@
   static NSString *CellIdentifier = @"Cell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   
-  cell.textLabel.text = [crafts objectAtIndex:indexPath.row];
+  NSString *craft = [crafts objectAtIndex:indexPath.row];
+  cell.textLabel.text = craft;
+  if ([craft isEqualToString:self.detailItem.craft]) {
+    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+  } else {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+  }
   return cell;
 }
 
@@ -72,13 +84,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+  NSString *craft = [crafts objectAtIndex:indexPath.row];
+  self.detailItem.craft = craft;
+  [self.delegate detailItemEdited];
+  [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 @end

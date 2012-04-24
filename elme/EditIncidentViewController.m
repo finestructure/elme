@@ -9,6 +9,7 @@
 #import "EditIncidentViewController.h"
 
 #import "Annotation.h"
+#import "CraftsViewController.h"
 #import "Database.h"
 #import "DescriptionCell.h"
 #import "ImagesCell.h"
@@ -280,7 +281,7 @@
       break;
       
     case 3:
-      cell.textLabel.text = @"test"; //self.detailItem.craft;
+      cell.textLabel.text = self.detailItem.craft;
       break;
   }
   return cell;
@@ -333,10 +334,6 @@
     DescriptionCell *cell = [cells objectAtIndex:1];
     self.detailItem.desc = cell.textView.text;
   }
-  {
-    UITableViewCell *cell = [cells objectAtIndex:3];
-    self.detailItem.craft = cell.textLabel.text;
-  }
   
   if (! self.isNewItem) {
     // only save on change if item is not new
@@ -363,6 +360,10 @@
     vc.delegate = self;
   } else if ([[segue identifier] isEqualToString:@"ImagesDetail"]) {
     ImagesViewController *vc = [segue destinationViewController];
+    vc.detailItem = self.detailItem;
+    vc.delegate = self;
+  } else if ([[segue identifier] isEqualToString:@"CraftDetail"]) {
+    CraftsViewController *vc = [segue destinationViewController];
     vc.detailItem = self.detailItem;
     vc.delegate = self;
   }
