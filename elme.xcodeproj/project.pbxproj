@@ -60,6 +60,7 @@
 		5AC200C4152CA92500866FC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200C3152CA92500866FC5 /* MapKit.framework */; };
 		5AC200CD152D7BC200866FC5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC200CC152D7BC200866FC5 /* CoreLocation.framework */; };
 		5AC200D0152D7BE400866FC5 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC200CF152D7BE400866FC5 /* Annotation.m */; };
+		5AF58F521546B4C6004AA14C /* CraftsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF58F511546B4C6004AA14C /* CraftsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,8 @@
 		5AC200CC152D7BC200866FC5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5AC200CE152D7BE400866FC5 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		5AC200CF152D7BE400866FC5 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
+		5AF58F501546B4C5004AA14C /* CraftsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CraftsViewController.h; sourceTree = "<group>"; };
+		5AF58F511546B4C6004AA14C /* CraftsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CraftsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +278,8 @@
 				5A60BD50153F04CB001B69E6 /* LocationViewController.m */,
 				5A60BD61154031F0001B69E6 /* ImagesViewController.h */,
 				5A60BD62154031F0001B69E6 /* ImagesViewController.m */,
+				5AF58F501546B4C5004AA14C /* CraftsViewController.h */,
+				5AF58F511546B4C6004AA14C /* CraftsViewController.m */,
 				5A60BDA315413707001B69E6 /* Views */,
 				5A60BD9C1540546B001B69E6 /* vendor */,
 				5A60BD42153EE590001B69E6 /* Resources */,
@@ -494,6 +499,7 @@
 				5A60BDA215405992001B69E6 /* SOCQCore.m in Sources */,
 				5A60BDA615414002001B69E6 /* ImagesView.m in Sources */,
 				5A60BDD1154166E2001B69E6 /* GCD.m in Sources */,
+				5AF58F521546B4C6004AA14C /* CraftsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
