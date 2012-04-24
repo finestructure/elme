@@ -119,9 +119,15 @@
   [cells addObject:[nib objectAtIndex:0]];
   nib = [[NSBundle mainBundle] loadNibNamed:@"ImagesCell" owner:self options:nil];
   [cells addObject:[nib objectAtIndex:0]];
+  {
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CraftCell"];
+    [cells addObject:cell];
+  }
 
-  DescriptionCell *cell = [cells objectAtIndex:1];
-  cell.delegate = self;
+  {
+    DescriptionCell *cell = [cells objectAtIndex:1];
+    cell.delegate = self;
+  }
   
   [self configureView];
 }
@@ -173,6 +179,7 @@
   [self dismissModalViewControllerAnimated:YES];
 }
 
+
 - (IBAction)deleteItem:(id)sender {
   NSString *title = NSLocalizedString(@"Diesen Vorfall löschen?", 
                                       @"Delete incident action sheet title");
@@ -208,8 +215,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  id cell = [cells objectAtIndex:indexPath.section];
-  return [cell rowHeight];
+  if (indexPath.section == 3) {
+    return 44;
+  } else {
+    id cell = [cells objectAtIndex:indexPath.section];
+    return [cell rowHeight];
+  }
 }
 
 
@@ -267,6 +278,10 @@
     case 2:
       // images cell has its detailItem already assigned in configureView
       break;
+      
+    case 3:
+      cell.textLabel.text = @"test"; //self.detailItem.craft;
+      break;
   }
   return cell;
 }
@@ -280,7 +295,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-  return 3;
+  return 4;
 }
 
 
@@ -299,6 +314,10 @@
       return NSLocalizedString(@"Bilder", @"Images header");
       break;
 
+    case 3:
+      return NSLocalizedString(@"Gewerk", @"Craft header");
+      break;
+      
     default:
       return @"";
       break;
@@ -310,8 +329,14 @@
 
 
 - (void)detailItemEdited {
-  DescriptionCell *cell = [cells objectAtIndex:1];
-  self.detailItem.desc = cell.textView.text;
+  {
+    DescriptionCell *cell = [cells objectAtIndex:1];
+    self.detailItem.desc = cell.textView.text;
+  }
+  {
+    UITableViewCell *cell = [cells objectAtIndex:3];
+    self.detailItem.craft = cell.textLabel.text;
+  }
   
   if (! self.isNewItem) {
     // only save on change if item is not new
