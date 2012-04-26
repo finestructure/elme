@@ -4,3 +4,6 @@
 [submodule "vendor/CouchCocoa"]
 	path = vendor/CouchCocoa
 	url = https://github.com/couchbaselabs/CouchCocoa.git
+[submodule "vendor/TouchDB"]
+	path = vendor/TouchDB
+	url = https://github.com/couchbaselabs/TouchDB-iOS.git
