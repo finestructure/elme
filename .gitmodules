@@ -1,3 +1,6 @@
 [submodule "vendor/SOCQ"]
 	path = vendor/SOCQ
 	url = https://github.com/acburk/SOCQ.git
+[submodule "vendor/CouchCocoa"]
+	path = vendor/CouchCocoa
+	url = https://github.com/couchbaselabs/CouchCocoa.git
