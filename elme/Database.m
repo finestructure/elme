@@ -179,7 +179,7 @@
                      }
                    }
                  } 
-                  version: @"1.0"];
+                  version: @"2.0"];
   
   // and a validation function requiring parseable dates
   design.validationBlock = ^BOOL(TDRevision* newRevision, id<TDValidationContext> context) {

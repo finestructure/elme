@@ -96,6 +96,7 @@
   } else {
     // change with inconsisted row counts: update the whole table to avoid
     // NSInternalInconsistencyException from UITableView
+    NSLog(@"Warning: row count mismatch in couchTableSource:updateFromQuery:previousRows:");
     [self.tableView reloadData];
   }
 }
