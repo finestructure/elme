@@ -19,6 +19,7 @@
 
 + (Database *)sharedInstance;
 - (BOOL)connect:(NSError **)outError;
+- (void)disconnect;
 - (CouchDesignDocument *)designDocumentWithName:(NSString *)name;
 
 - (Project *)projectWithId:(NSString *)docId;

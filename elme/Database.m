@@ -20,13 +20,12 @@
 @interface Database () {
   CouchReplication* _pull;
   CouchReplication* _push;
+  CouchDatabase *_database;
 }
 @end
 
 
 @implementation Database
-
-@synthesize database = _database;
 
 
 + (id)sharedInstance {
@@ -35,6 +34,22 @@
   
   dispatch_once(&onceQueue, ^{ database = [[self alloc] init]; });
   return database;
+}
+
+
+- (CouchDatabase *)database {
+  if (_database) {
+    return _database;
+  } else {
+    NSError *error = nil;
+    BOOL connected = [self connect:&error];
+    if (! connected) {
+      NSLog(@"Connecting to database failed: %@", [error localizedDescription]);
+      return nil;
+    } else {
+      return _database;
+    }
+  }
 }
 
 
@@ -78,6 +93,12 @@
 }
 
 
+- (void)disconnect {
+  [self forgetSync];
+  _database = nil;
+}
+
+
 - (CouchDesignDocument *)designDocumentWithName:(NSString *)name {
   return [self.database designDocumentWithName:name];
 }
@@ -88,7 +109,7 @@
 
 - (void)updateSyncURL {
   NSLog(@"resetting sync");
-  if (!self.database) {
+  if (! self.database) {
     NSLog(@"no database!");
     return;
   }
