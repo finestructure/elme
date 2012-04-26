@@ -27,11 +27,10 @@
 {
   [super viewDidLoad];
   crafts = [NSArray arrayWithObjects:
+            @"Dachdecker",
             @"Elektro",
-            @"Fliesenleger",
-            @"Installateur",
-            @"Isolierarbeiten",
-            @"Klempner",
+            @"Fensterbauer",
+            @"Sanitär",
             nil];
 }
 
