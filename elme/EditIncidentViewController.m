@@ -333,6 +333,7 @@
   {
     DescriptionCell *cell = [cells objectAtIndex:1];
     self.detailItem.desc = cell.textView.text;
+    [cell.textView resignFirstResponder];
   }
   
   if (! self.isNewItem) {
