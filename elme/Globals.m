@@ -102,15 +102,12 @@ NSString * const kConfigurationDefaultsKey = @"Configuration";
       }
       {
         Configuration *c = [[Configuration alloc] init];
-        c.name = @"TEST";
-        c.displayName = @"Test (abstracture.de)";
-        c.hostname = @"elme.abstracture.de";
-        c.username = @"elme";
-        c.password = @"Tifora79";
-        c.port = 443;
-        c.protocol = @"https";
-        c.realm = @"Graf";
-        c.dbname = @"elme_test";
+        c.name = @"LOCAL";
+        c.displayName = @"Thebe (thebe.local)";
+        c.hostname = @"thebe.local";
+        c.port = 5984;
+        c.protocol = @"http";
+        c.dbname = @"elme";
         c.localDbname = c.dbname;
         [configurations addObject:c];
       }

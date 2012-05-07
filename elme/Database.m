@@ -56,7 +56,7 @@
 - (BOOL)connect:(NSError **)outError {
   gCouchLogLevel = 1;
 
-  Configuration *conf = [[Globals sharedInstance] currentConfiguration];
+  Configuration *conf = [[Globals sharedInstance] configurationWithName:@"LOCAL"];
   { // register credentials
     NSURLCredential* cred;
     cred = [NSURLCredential credentialWithUser:conf.username
@@ -113,7 +113,7 @@
     NSLog(@"no database!");
     return;
   }
-  Configuration *conf = [[Globals sharedInstance] currentConfiguration];
+  Configuration *conf = [[Globals sharedInstance] configurationWithName:@"LOCAL"];
   NSLog(@"configuration: %@", conf.displayName);
   NSURL* newRemoteURL = [NSURL URLWithString:conf.remoteUrl];
   
